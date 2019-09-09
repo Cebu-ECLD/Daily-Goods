@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+        <link rel="stylesheet" href="css/style.css">
+    <title>Goods Page</title>
+  </head>
+
+  <body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <img id="product-img" src="imgs/rem.jpeg" class="rounded" alt="this is an image" width="100%">
+                </div>
+                <div class="row">
+                </div>
+            </div>
+            <div class="col-md-6" >
+                <h2 id="product-name">this is the name of the product</h2>
+                <p id="produc-number" class="text-muted"> number of product xxxxxxxxx </p>
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="imgs/rem.jpeg" class="rounded" alt="this is an image" width="70%">
+                    </div>
+                    <div class="col-md-2">
+                        <img src="imgs/rem.jpeg" class="rounded" alt="this is an image" width="70%">
+                    </div>
+                    <div class="col-md-2">
+                        <img src="imgs/rem.jpeg" class="rounded" alt="this is an image" width="70%">
+                    </div>
+                </div>
+                <h6 class="text-danger" id="price">価格 <span id="price"><font size=10>1100円 </font>110円/本</span>（税入）</h6>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h6 class="text-danger">
+                            <img src="imgs/icon_point.png" height="22px">
+                             14ポイント（1倍）
+                        </h6>
+                    </div>
+                </div> 
+
+                <div>
+                      <h4>QUICK REVIEW</h4>
+                      <hr>
+                      <p class="text-muted">this is the details of this product</p>
+                </div>
+                <div>
+                      <h4>配送</h4>
+                      <hr>
+                      <div class="row">
+                        <div class="col-md-4">
+                            <p class="text-muted">送料648円</p>
+                        </div>
+                         <div class="col-md-8">
+                            <p class="text-muted">東京都への最安送料</p>
+                            <p class="text-muted">宅配便</p>
+                            <a href="">すべての配送方法と送料を見る</a>
+                        </div>
+                      </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="input-group input-group-sm mb-3">
+                              <div class="input-group-prepend">
+                                    <button  id="minus-btn" class="btn btn-outline-secondary btn-xs" type="button" onmouseover="changeMouseOn()" onmouseout="changeMouseOff()" >-</button>
+                              </div>
+                              <input id="num-product" type="text" class="text-center form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" value="1">
+                              <div class="input-group-append">
+                                     <button id="plus-btn" class="btn btn-outline-secondary btn-xs" type="button">+</button>
+                              </div>
+                        </div>
+               
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-block btn-danger btn-sm"><img src=imgs/plussign_23x23.png>ご購入手続きへ</button>
+
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-block btn-danger btn-sm"><img src=imgs/carticon_23x23.png>商品をかごに追加</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script type="text/javascript">
+  $("#minus-btn").click(function(){
+    $("#num-product").val(Number($("#num-product").val())-1)
+    if( $("#num-product").val()<=1){
+            $("#minus-btn").attr("disabled",true)
+            }
+  })  
+</script>
+
+
+<script type="text/javascript">
+  $("#plus-btn").click(function(){
+    $("#num-product").val(Number($("#num-product").val())+1)
+        if( $("#num-product").val()>1){
+            $("#minus-btn").attr("disabled",false)
+        }
+  })  
+</script>
+
+<script type="text/javascript">
+    if( $("#num-product").val()<=1){
+            $("#minus-btn").attr("disabled",true)
+        }
+</script>
+
+<script type="text/javascript">
+    $("#product-name").click(function(){
+        $("#product-name").html("I love you")
+    })
+</script>
+
+  </body>
+</html>
