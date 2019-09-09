@@ -1,0 +1,108 @@
+
+/*side bar*/
+.searchBar{
+	top: 0px;
+	width:100%;
+	z-index: 2;
+	/*background-color: blue;*/
+	height: 50px;
+}
+
+.fixedSearchBar{
+	top: 0px;
+	width:100%;
+	position: fixed;
+	z-index: 1;
+	height: 45px;
+	background-color: red;
+}
+
+/*infomation bar*/
+
+
+aside .category {margin-bottom: 15px;}
+aside .category .ttl {padding: 10px;background: #666666;color: #fefefe;}
+aside .category ul {border: 1px solid #e2e2e2;}
+aside .category li+li {border-top: 1px solid #e2e2e2;}
+aside .category a {padding: 15px 0 15px 70px;display: block;}
+aside .category .ico_water a {background: url(https://24.r10s.jp/_pc/img/ico_water.png) left 50% no-repeat;}
+aside .category .ico_daily a {background: url(https://24.r10s.jp/_pc/img/ico_daily.png) left 50% no-repeat;}
+aside .category .ico_food a {background: url(https://24.r10s.jp/_pc/img/ico_food.png) left 50% no-repeat;}
+aside .category .ico_health a {background: url(https://24.r10s.jp/_pc/img/ico_health.png) left 50% no-repeat;}
+aside .category .ico_cosme a {background: url(https://24.r10s.jp/_pc/img/ico_cosme.png) left 50% no-repeat;}
+aside .category .ico_medicine a {background: url(https://24.r10s.jp/_pc/img/ico_medicine.png) left 50% no-repeat;}
+aside .category .ico_medical a {background: url(https://24.r10s.jp/_pc/img/ico_medical.png) left 50% no-repeat;}
+aside .category .ico_baby a {background: url(https://24.r10s.jp/_pc/img/ico_baby.png) left 50% no-repeat;}
+aside .category .ico_pet a {background: url(https://24.r10s.jp/_pc/img/ico_pet.png) left 50% no-repeat;}
+aside .category .ico_nursing a {background: url(https://24.r10s.jp/_pc/img/ico_nursing.png) left 50% no-repeat;}
+aside .category .ico_kitchen a {background: url(https://24.r10s.jp/_pc/img/ico_kitchen.png) left 50% no-repeat;}
+aside .category .ico_homeelectronics a {background: url(https://24.r10s.jp/_pc/img/ico_homeelectronics.png) left 50% no-repeat;}
+aside .category .ico_diy a {background: url(https://24.r10s.jp/_pc/img/ico_diy.png) left 50% no-repeat;}
+aside .category .ico_sports a {background: url(https://24.r10s.jp/_pc/img/ico_sports.png) left 50% no-repeat;}
+aside .category .ico_healing a {background: url(https://24.r10s.jp/_pc/img/ico_healing.png) left 50% no-repeat;}
+
+
+
+
+.content{
+	position:absolute;
+}
+
+.infoBar{
+	float: left;
+	width: 20%;
+}
+
+#risFil .whitePicture{
+	width: 15%
+	background-color:white;
+}
+#risFil .noImage{
+	max-width: 100%;
+	max-height: 100%;
+	/*position: absolute;*/
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto !important;
+}
+
+#risFil .categoryWindowImg{
+	/*position: relative;*/
+	width: 128px;
+	height: 128px;
+	margin: auto;
+}
+
+#risFil .category_itemnamelink {
+	margin: 0 !important;
+	text-align: left;
+	color: black;
+	font-size: 13px;
+}
+
+#risFil .category_itemprice{
+	font-weight: bold;
+	color: #bc0000;
+	font-size: 26px;
+	font-weight: bold;
+}
+
+#risFil .category_itemtaxpostage{
+	font-size: 10px;
+}
+
+.add-cart{
+	background-color: #bf0000 !important;
+    color: #bf0020;
+    text-align: center;
+    display: inline-block;
+}
+
+.checkout{
+	background-color: #bf0000 !important;
+    color: #bf0020;
+    text-align: center;
+    display: inline-block;
+}
