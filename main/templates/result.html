@@ -1,19 +1,385 @@
 <!DOCTYPE html>
-<html lang="ja">
-  <head>
-    
-  </head>
-  <body>
-  　<h1>Hello!</h1>
-    <h2 class="h1" id='test'>ようこそ</h2>
-    
-      {{ title }}　
-      {{ message }}<br>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Searching Result</title>
+	<link rel="stylesheet" type="text/css" href="./static/style.css">
+</head>
+<body>
 
-      検索結果<br>
-      {{ word }} <br>
+	<div class="fixedSearchBar">
+		
+	</div>
 
-      返すjsonファイル<br>
-      {{ item_data }}
-  </body>
+	<!-- Search bar -->
+	<div class="searchBar">
+	</div>
+
+	<!-- Search Result Items -->
+	<div id="risFil" class="content">
+		<!-- Info Bar -->
+	<!-- <table class="infoBar">
+		<tr>
+			<td>
+				Water
+			</td>
+		</tr>
+	</table> -->
+
+	<aside style="float: left; width: 20%;">
+
+		<th:block th:fragment="comp">
+		<section class="category">
+			<div class="ttl">カテゴリから探す</div>
+			<ul>
+				<li class="ico_water"><a href="https://item.rakuten.co.jp/rakuten24/c/0000009966/?s-id=r24_pc_cg_01" target="_top">水・飲料</a></li>
+				<li class="ico_daily"><a href="https://item.rakuten.co.jp/rakuten24/c/0000007422/?s-id=r24_pc_cg_02" target="_top">日用品</a></li>
+				<li class="ico_food"><a href="https://item.rakuten.co.jp/rakuten24/c/0000008983/?s-id=r24_pc_cg_03" target="_top">フード</a></li>
+				<li class="ico_health"><a href="https://item.rakuten.co.jp/rakuten24/c/0000005960/?s-id=r24_pc_cg_04" target="_top">健康食品</a></li>
+				<li class="ico_medicine"><a href="https://item.rakuten.co.jp/rakuten24/c/0000014487/?s-id=r24_pc_cg_05" target="_top">医薬品</a></li>
+				<li class="ico_cosme"><a href="https://item.rakuten.co.jp/rakuten24/c/0000006584/?s-id=r24_pc_cg_06" target="_top">化粧品</a></li>
+				<li class="ico_medical"><a href="https://item.rakuten.co.jp/rakuten24/c/0000008356/?s-id=r24_pc_cg_07" target="_top">衛生医療</a></li>
+				<li class="ico_baby"><a href="https://item.rakuten.co.jp/rakuten24/c/0000008698/?s-id=r24_pc_cg_08" target="_top">ベビー＆キッズ</a></li>
+				<li class="ico_pet"><a href="https://item.rakuten.co.jp/rakuten24/c/0000009459/?s-id=r24_pc_cg_09" target="_top">ペット用品</a></li>
+				<li class="ico_nursing"><a href="https://item.rakuten.co.jp/rakuten24/c/0000009814/?s-id=r24_pc_cg_10" target="_top">介護</a></li>
+				<li class="ico_kitchen"><a href="https://item.rakuten.co.jp/rakuten24/c/0000010104/?s-id=r24_pc_cg_11" target="_top">ホーム＆キッチン</a></li>
+				<li class="ico_homeelectronics"><a href="https://item.rakuten.co.jp/rakuten24/c/0000006506/?s-id=r24_pc_cg_12" target="_top">家電</a></li>
+				<li class="ico_sports"><a href="https://item.rakuten.co.jp/rakuten24/c/0000006475/?s-id=r24_pc_cg_13" target="_top">スポーツ</a></li>
+				<li class="ico_healing"><a href="https://item.rakuten.co.jp/rakuten24/c/0000006361/?s-id=r24_pc_cg_14" target="_top">癒し用品</a></li>
+			</ul>
+		</section>
+		</th:block>
+
+	</aside>
+
+	<table width="80%" vspace="10" cellspacing="0" cellpadding="0" border="0">
+		<tr valign="top" align="center">
+			<td style="padding:5px 5px 0px 10px;">
+				<form method="get" name="form1" action="page">
+					<input type="hidden" name="good_info" value={{ result[0]['GUID'] }}>
+					<a target="_top" href="javascript:form1.submit()">
+						<div class="categoryWindowImg">
+							<img src= {{ result[0]['mediumImageUrls'] }} class="noImage">
+						</div>
+					</a>
+				</form>
+
+				<br>
+			</td>
+
+			<td style="padding:5px 5px 0px 5px;">
+				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e329884h/">
+					<div class="categoryWindowImg">
+						<img src="https://tshop.r10s.jp/rakuten24/cabinet/012/4531808053012.jpg?fitin=128:128" class="noImage">
+					</div>
+				</a>
+				<br>
+			</td>
+
+			<td style="padding:5px 10px 0px 5px;">
+				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/a001269197004/">
+					<div class="categoryWindowImg">
+						<img src="https://tshop.r10s.jp/rakuten24/cabinet/627/4903111482627.jpg?fitin=128:128" class="noImage">
+					</div>
+				</a>
+				<br>
+			</td>
+		</tr>
+
+		<tr valign="top" align="center">
+			<td style="padding:0px 5px 0px 10px;">
+				<!-- formの名前重複だめ -->
+				<form method="get" name="form1_1" action="page"> 
+					<input type="hidden" name="good_info" value={{ result[0]['GUID'] }}>
+					<a target="_top" href="javascript:form1.submit()" class="category_itemnamelink">
+						{{ result[0]['itemName'] }}
+					</a>
+				</form>
+				<br>
+				<span class="category_itemprice">
+					{{ result[0]['itemPrice'] }}円&nbsp;
+				</span>
+				<span class="category_itemtaxpostage">
+					送料別&nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp;
+				</span>
+
+				<button class="add-cart">
+					<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/plussign_23x23.png">
+				</button>
+				<button class="checkout">
+					<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/carticon_23x23.png">
+				</button>
+				<br>
+				<br>
+			</td>
+			<td style="padding:0px 5px 0px 5px;">
+				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e329884h/" class="category_itemnamelink">
+					税抜2500円以上で送料無料（北海道・沖縄除く） / 過炭酸ナトリウム(酸素系漂白剤)過炭酸ナトリウム(酸素系漂白剤)(1kg)【rank】
+				</a>
+				<br>
+				<span class="category_itemprice">
+					381円&nbsp;
+				</span>
+				<span class="category_itemtaxpostage">
+					送料別
+				</span>
+
+				<br>
+				<br>
+			</td>
+			<td style="padding:0px 10px 0px 5px;">
+				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/a001269197004/" class="category_itemnamelink">税抜2500円以上で送料無料（北海道・沖縄除く） / シルコット / シルコット 消毒ウェットティッシュ つめかえ用シルコット 消毒ウェットティッシュ つめかえ用(40枚*3コ入)【StampgrpB】【シルコット】</a>
+				<br>
+				<span class="category_itemprice">460円&nbsp;
+				</span><span class="category_itemtaxpostage">送料別</span>
+
+				<br>
+				<br>
+			</td>
+		</tr>
+
+		<tr valign="top" align="center">
+			<td style="padding:5px 5px 0px 10px;">
+				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e404402h/">
+					<div class="categoryWindowImg">
+						<img src="https://tshop.r10s.jp/rakuten24/cabinet/408/4901670111408.jpg?fitin=128:128" class="noImage">
+					</div>
+				</a>
+				<br>
+			</td>
+
+			<td style="padding:5px 5px 0px 5px;">
+				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e329884h/">
+					<div class="categoryWindowImg">
+						<img src="https://tshop.r10s.jp/rakuten24/cabinet/012/4531808053012.jpg?fitin=128:128" class="noImage">
+					</div>
+				</a>
+				<br>
+			</td>
+
+			<td style="padding:5px 10px 0px 5px;">
+				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/a001269197004/">
+					<div class="categoryWindowImg">
+						<img src="https://tshop.r10s.jp/rakuten24/cabinet/627/4903111482627.jpg?fitin=128:128" class="noImage">
+					</div>
+				</a>
+				<br>
+			</td>
+		</tr>
+
+		<tr valign="top" align="center">
+			<td style="padding:0px 5px 0px 10px;">
+				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e404402h/" class="category_itemnamelink">
+
+					税抜2500円以上で送料無料（北海道・沖縄除く） / Ziploc(ジップロック) / ジップロック お手軽バッグ Sジップロック お手軽バッグ S(100枚)【StampgrpB】【Ziploc(ジップロック)】
+				</a>
+				<br>
+				<span class="category_itemprice">
+					756円&nbsp;
+				</span>
+				<span class="category_itemtaxpostage">
+					送料別
+				</span>
+
+				<br>
+				<br>
+			</td>
+			<td style="padding:0px 5px 0px 5px;">
+				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e329884h/" class="category_itemnamelink">
+					税抜2500円以上で送料無料（北海道・沖縄除く） / 過炭酸ナトリウム(酸素系漂白剤)過炭酸ナトリウム(酸素系漂白剤)(1kg)【rank】
+				</a>
+				<br>
+				<span class="category_itemprice">
+					381円&nbsp;
+				</span>
+				<span class="category_itemtaxpostage">
+					送料別
+				</span>
+
+				<br>
+				<br>
+			</td>
+			<td style="padding:0px 10px 0px 5px;">
+				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/a001269197004/" class="category_itemnamelink">税抜2500円以上で送料無料（北海道・沖縄除く） / シルコット / シルコット 消毒ウェットティッシュ つめかえ用シルコット 消毒ウェットティッシュ つめかえ用(40枚*3コ入)【StampgrpB】【シルコット】</a>
+				<br>
+				<span class="category_itemprice">460円&nbsp;
+				</span><span class="category_itemtaxpostage">送料別</span>
+
+				<br>
+				<br>
+			</td>
+
+		</tr>
+
+		<tr valign="top" align="center">
+			<td style="padding:5px 5px 0px 10px;">
+				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e404402h/">
+					<div class="categoryWindowImg">
+						<img src="https://tshop.r10s.jp/rakuten24/cabinet/408/4901670111408.jpg?fitin=128:128" class="noImage">
+					</div>
+				</a>
+				<br>
+			</td>
+
+			<td style="padding:5px 5px 0px 5px;">
+				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e329884h/">
+					<div class="categoryWindowImg">
+						<img src="https://tshop.r10s.jp/rakuten24/cabinet/012/4531808053012.jpg?fitin=128:128" class="noImage">
+					</div>
+				</a>
+				<br>
+			</td>
+
+			<td style="padding:5px 10px 0px 5px;">
+				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/a001269197004/">
+					<div class="categoryWindowImg">
+						<img src="https://tshop.r10s.jp/rakuten24/cabinet/627/4903111482627.jpg?fitin=128:128" class="noImage">
+					</div>
+				</a>
+				<br>
+			</td>
+		</tr>
+
+		<tr valign="top" align="center">
+			<td style="padding:0px 5px 0px 10px;">
+				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e404402h/" class="category_itemnamelink">
+
+					税抜2500円以上で送料無料（北海道・沖縄除く） / Ziploc(ジップロック) / ジップロック お手軽バッグ Sジップロック お手軽バッグ S(100枚)【StampgrpB】【Ziploc(ジップロック)】
+				</a>
+				<br>
+				<span class="category_itemprice">
+					756円&nbsp;
+				</span>
+				<span class="category_itemtaxpostage">
+					送料別
+				</span>
+
+				<br>
+				<br>
+			</td>
+			<td style="padding:0px 5px 0px 5px;">
+				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e329884h/" class="category_itemnamelink">
+					税抜2500円以上で送料無料（北海道・沖縄除く） / 過炭酸ナトリウム(酸素系漂白剤)過炭酸ナトリウム(酸素系漂白剤)(1kg)【rank】
+				</a>
+				<br>
+				<span class="category_itemprice">
+					381円&nbsp;
+				</span>
+				<span class="category_itemtaxpostage">
+					送料別
+				</span>
+
+				<br>
+				<br>
+			</td>
+			<td style="padding:0px 10px 0px 5px;">
+				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/a001269197004/" class="category_itemnamelink">税抜2500円以上で送料無料（北海道・沖縄除く） / シルコット / シルコット 消毒ウェットティッシュ つめかえ用シルコット 消毒ウェットティッシュ つめかえ用(40枚*3コ入)【StampgrpB】【シルコット】</a>
+				<br>
+				<span class="category_itemprice">460円&nbsp;
+				</span><span class="category_itemtaxpostage">送料別</span>
+
+				<br>
+				<br>
+			</td>
+		</tr>
+
+		<tr valign="top" align="center">
+			<td style="padding:5px 5px 0px 10px;">
+				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e404402h/">
+					<div class="categoryWindowImg">
+						<img src="https://tshop.r10s.jp/rakuten24/cabinet/408/4901670111408.jpg?fitin=128:128" class="noImage">
+					</div>
+				</a>
+				<br>
+			</td>
+
+			<td style="padding:5px 5px 0px 5px;">
+				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e329884h/">
+					<div class="categoryWindowImg">
+						<img src="https://tshop.r10s.jp/rakuten24/cabinet/012/4531808053012.jpg?fitin=128:128" class="noImage">
+					</div>
+				</a>
+				<br>
+			</td>
+
+			<td style="padding:5px 10px 0px 5px;">
+				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/a001269197004/">
+					<div class="categoryWindowImg">
+						<img src="https://tshop.r10s.jp/rakuten24/cabinet/627/4903111482627.jpg?fitin=128:128" class="noImage">
+					</div>
+				</a>
+				<br>
+			</td>
+		</tr>
+
+		<tr valign="top" align="center">
+			<td style="padding:0px 5px 0px 10px;">
+				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e404402h/" class="category_itemnamelink">
+
+					税抜2500円以上で送料無料（北海道・沖縄除く） / Ziploc(ジップロック) / ジップロック お手軽バッグ Sジップロック お手軽バッグ S(100枚)【StampgrpB】【Ziploc(ジップロック)】
+				</a>
+				<br>
+				<span class="category_itemprice">
+					756円&nbsp;
+				</span>
+				<span class="category_itemtaxpostage">
+					送料別
+				</span>
+
+				<br>
+				<br>
+			</td>
+			<td style="padding:0px 5px 0px 5px;">
+				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e329884h/" class="category_itemnamelink">
+					税抜2500円以上で送料無料（北海道・沖縄除く） / 過炭酸ナトリウム(酸素系漂白剤)過炭酸ナトリウム(酸素系漂白剤)(1kg)【rank】
+				</a>
+				<br>
+				<span class="category_itemprice">
+					381円&nbsp;
+				</span>
+				<span class="category_itemtaxpostage">
+					送料別
+				</span>
+
+				<br>
+				<br>
+			</td>
+			<td style="padding:0px 10px 0px 5px;">
+				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/a001269197004/" class="category_itemnamelink">税抜2500円以上で送料無料（北海道・沖縄除く） / シルコット / シルコット 消毒ウェットティッシュ つめかえ用シルコット 消毒ウェットティッシュ つめかえ用(40枚*3コ入)【StampgrpB】【シルコット】</a>
+				<br>
+				<span class="category_itemprice">460円&nbsp;
+				</span><span class="category_itemtaxpostage">送料別</span>
+
+				<br>
+				<br>
+			</td>
+		</tr>
+
+
+	</table>
+
+	{{ item_data['Items'][0]['mediumImageUrls'][0] }}
+	<br>
+	{{ item_data['Items'][0]['shopUrl'] }}
+	<br>
+	{{ item_data['Items'][0]['itemName'] }}
+	<br>
+	{{ item_data['Items'][0]['itemPrice']}}
+	<br>
+	{{ result[0] }}
+	<br>
+	{{ result[0]['mediumImageUrls'] }}
+
+
+	<!-- {{ item_data }} -->
+
+</div>
+
+<!-- annotation -->
+<div class="annotation">
+
+</div>
+
+
+</body>
 </html>
