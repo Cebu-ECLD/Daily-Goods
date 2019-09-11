@@ -25,7 +25,7 @@ import pymysql.cursors
 
 conn = pymysql.connect(host='127.0.0.1',
                     user='root',
-                    db='rakuten_db2',
+                    db='rakuten_db3',
                     charset='utf8mb4',
                     cursorclass=pymysql.cursors.DictCursor)
 

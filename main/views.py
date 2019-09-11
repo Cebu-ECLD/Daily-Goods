@@ -41,7 +41,7 @@ def result():
     #db使う場合(固定してるからここ変更する)
     word = request.args.get('search')
     with init.conn.cursor() as cursor:
-        sql = "SELECT * FROM product_table"
+        sql = "SELECT * FROM product_table WHERE itemName LIKE " + "'%" + word + "%'" + " OR itemCaption LIKE '%" + word + "%'"
         cursor.execute(sql)
         result = cursor.fetchall()
 
