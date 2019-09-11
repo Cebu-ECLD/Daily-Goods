@@ -1,3 +1,13 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+		
+.img-fluid{
+	max-width : 30%;
+	height : 30%;
+	display : block;
+}
 
 /*side bar*/
 .searchBar{
@@ -12,7 +22,7 @@
 	top: 0px;
 	width:100%;
 	position: fixed;
-	z-index: 1;
+	z-index: 999;
 	height: 45px;
 	background-color: red;
 }
@@ -40,7 +50,6 @@ aside .category .ico_homeelectronics a {background: url(https://24.r10s.jp/_pc/i
 aside .category .ico_diy a {background: url(https://24.r10s.jp/_pc/img/ico_diy.png) left 50% no-repeat;}
 aside .category .ico_sports a {background: url(https://24.r10s.jp/_pc/img/ico_sports.png) left 50% no-repeat;}
 aside .category .ico_healing a {background: url(https://24.r10s.jp/_pc/img/ico_healing.png) left 50% no-repeat;}
-
 
 
 
@@ -82,6 +91,15 @@ aside .category .ico_healing a {background: url(https://24.r10s.jp/_pc/img/ico_h
 	font-size: 13px;
 }
 
+/*extra information about items*/
+
+#risFil .itemprice{
+	font-weight: bold;
+	color: #bc0000;
+	font-size: 26px;
+	font-weight: bold;
+}
+
 #risFil .category_itemprice{
 	font-weight: bold;
 	color: #bc0000;
@@ -91,6 +109,11 @@ aside .category .ico_healing a {background: url(https://24.r10s.jp/_pc/img/ico_h
 
 #risFil .category_itemtaxpostage{
 	font-size: 10px;
+}
+
+#risFil .category_itemcommentnumber{
+	font-size: 13px;
+	color: blue;
 }
 
 .add-cart{
