@@ -31,7 +31,7 @@ color: #BF0000;
 width:400px;
 position:absolute;/*フォームの絶対位置*/	
 left:500px;
-top:0; 	
+top:50px; 	
 outline:0;/*クリック時の青い枠線消す*/	
 height:40px;/*検索ボックスの高さ*/	
 padding-left: :0 8px;/*テキスト位置調整*/	
@@ -44,7 +44,7 @@ width:70px;/*検索ボタンの横幅*/
 height:40px;/*検索ボタンの縦幅*/ 
 position:absolute;/*検索ボタンの絶対位置*/  
 left:900px;/*検索ボタンの位置調整*/  
-top:0;
+top:50px;
 border-radius:0 2px 2px 0;/*検索ボタンの角を丸める*/ 
 background:#BF0000;/*検索ボタンの背景カラー*/ 
 border:none;/*検索ボタンの枠線を消す*/ 
@@ -77,5 +77,16 @@ aside .category .ico_homeelectronics a {background: url(https://24.r10s.jp/_pc/i
 aside .category .ico_diy a {background: url(https://24.r10s.jp/_pc/img/ico_diy.png) left 50% no-repeat;}
 aside .category .ico_sports a {background: url(https://24.r10s.jp/_pc/img/ico_sports.png) left 50% no-repeat;}
 aside .category .ico_healing a {background: url(https://24.r10s.jp/_pc/img/ico_healing.png) left 50% no-repeat;}
+
+/* footer */
+.footer {
+  margin-top: 900px;
+  display: flex;
+  justify-content: center;
+  background-color: #BF0000;
+  color: #fff;
+  font-size: 18px;
+  padding: 2px 0;
+}
 
 
