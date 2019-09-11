@@ -51,327 +51,346 @@
 		</th:block>
 
 	</aside>
+	
+	{% if result[2]['mediumImageUrls_1'] %}
+		<table width="80%" vspace="10" cellspacing="0" cellpadding="0" border="0">
+			<tr valign="top" align="center">
+				<!-- 色々問題あってforで回せなかったのでゴリ押しで。 -->
+				<td style="padding:5px 5px 0px 10px;">
+					<form method="get" name=form1 action="page">
+						<input type="hidden" name="good_info" value={{ result[0]['GUID'] }}>
+						<a target="_top" href="javascript:form1.submit()">
+							<div class="categoryWindowImg">
+								<img src= {{ result[0]['mediumImageUrls_1'] }} class="noImage">
+							</div>
+						</a>
+					</form>
 
-	<table width="80%" vspace="10" cellspacing="0" cellpadding="0" border="0">
-		<tr valign="top" align="center">
-			<td style="padding:5px 5px 0px 10px;">
-				<form method="get" name="form1" action="page">
-					<input type="hidden" name="good_info" value={{ result[0]['GUID'] }}>
-					<a target="_top" href="javascript:form1.submit()">
-						<div class="categoryWindowImg">
-							<img src= {{ result[0]['mediumImageUrls_1'] }} class="noImage">
-						</div>
-					</a>
-				</form>
+					<br>
+				</td>
 
-				<br>
-			</td>
+				<td style="padding:5px 5px 0px 10px;">
+					<form method="get" name=form2 action="page">
+						<input type="hidden" name="good_info" value={{ result[1]['GUID'] }}>
+						<a target="_top" href="javascript:form2.submit()">
+							<div class="categoryWindowImg">
+								<img src= {{ result[1]['mediumImageUrls_1'] }} class="noImage">
+							</div>
+						</a>
+					</form>
 
-			<td style="padding:5px 5px 0px 5px;">
-				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e329884h/">
-					<div class="categoryWindowImg">
-						<img src="https://tshop.r10s.jp/rakuten24/cabinet/012/4531808053012.jpg?fitin=128:128" class="noImage">
-					</div>
-				</a>
-				<br>
-			</td>
+					<br>
+				</td>
+				
+				<td style="padding:5px 5px 0px 10px;">
+					<form method="get" name=form3 action="page">
+						<input type="hidden" name="good_info" value={{ result[2]['GUID'] }}>
+						<a target="_top" href="javascript:form3.submit()">
+							<div class="categoryWindowImg">
+								<img src= {{ result[2]['mediumImageUrls_1'] }} class="noImage">
+							</div>
+						</a>
+					</form>
 
-			<td style="padding:5px 10px 0px 5px;">
-				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/a001269197004/">
-					<div class="categoryWindowImg">
-						<img src="https://tshop.r10s.jp/rakuten24/cabinet/627/4903111482627.jpg?fitin=128:128" class="noImage">
-					</div>
-				</a>
-				<br>
-			</td>
-		</tr>
+					<br>
+				</td>
 
-		<tr valign="top" align="center">
-			<td style="padding:0px 5px 0px 10px;">
-				<!-- formの名前重複だめ -->
-				<form method="get" name="form1_1" action="page"> 
-					<input type="hidden" name="good_info" value={{ result[0]['GUID'] }}>
-					<a target="_top" href="javascript:form1.submit()" class="category_itemnamelink">
-						{{ result[0]['itemName'] }}
-					</a>
-				</form>
-				<br>
-				<span class="category_itemprice">
-					{{ result[0]['itemPrice'] }}円&nbsp;
-				</span>
-				<span class="category_itemtaxpostage">
-					送料別&nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp;
-				</span>
+			</tr>
 
-				<button class="add-cart">
-					<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/plussign_23x23.png">
-				</button>
-				<button class="checkout">
-					<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/carticon_23x23.png">
-				</button>
-				<br>
-				<br>
-			</td>
-			<td style="padding:0px 5px 0px 5px;">
-				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e329884h/" class="category_itemnamelink">
-					税抜2500円以上で送料無料（北海道・沖縄除く） / 過炭酸ナトリウム(酸素系漂白剤)過炭酸ナトリウム(酸素系漂白剤)(1kg)【rank】
-				</a>
-				<br>
-				<span class="category_itemprice">
-					381円&nbsp;
-				</span>
-				<span class="category_itemtaxpostage">
-					送料別
-				</span>
+			<tr valign="top" align="center">
+				<td style="padding:0px 5px 0px 10px;">
+					<!-- formの名前重複だめ -->
+					<form method="get" name="form1_1" action="page"> 
+						<input type="hidden" name="good_info" value={{ result[0]['GUID'] }}>
+						<a target="_top" href="javascript:form1_1.submit()" class="category_itemnamelink">
+							{{ result[0]['itemName'] }}
+						</a>
+					</form>
+					<br>
+					<span class="category_itemprice">
+						{{ result[0]['itemPrice'] }}円&nbsp;
+					</span>
+					<span class="category_itemtaxpostage">
+						送料別&nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp;
+					</span>
 
-				<br>
-				<br>
-			</td>
-			<td style="padding:0px 10px 0px 5px;">
-				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/a001269197004/" class="category_itemnamelink">税抜2500円以上で送料無料（北海道・沖縄除く） / シルコット / シルコット 消毒ウェットティッシュ つめかえ用シルコット 消毒ウェットティッシュ つめかえ用(40枚*3コ入)【StampgrpB】【シルコット】</a>
-				<br>
-				<span class="category_itemprice">460円&nbsp;
-				</span><span class="category_itemtaxpostage">送料別</span>
+					<button class="add-cart">
+						<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/plussign_23x23.png">
+					</button>
+					<button class="checkout">
+						<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/carticon_23x23.png">
+					</button>
+					<br>
+					<br>
+				</td>
+				<td style="padding:0px 5px 0px 5px;">
+					<form method="get" name="form2_2" action="page"> 
+						<input type="hidden" name="good_info" value={{ result[1]['GUID'] }}>
+						<a target="_top" href="javascript:form2_2.submit()" class="category_itemnamelink">
+							{{ result[１]['itemName'] }}
+						</a>
+					</form>
+					<br>
+					<span class="category_itemprice">
+						{{ result[1]['itemPrice'] }}&nbsp;
+					</span>
+					<span class="category_itemtaxpostage">
+						送料別
+					</span>
 
-				<br>
-				<br>
-			</td>
-		</tr>
+					<br>
+					<br>
+				</td>
+				<td style="padding:0px 5px 0px 5px;">
+					<form method="get" name="form3_3" action="page"> 
+						<input type="hidden" name="good_info" value={{ result[2]['GUID'] }}>
+						<a target="_top" href="javascript:form3_3.submit()" class="category_itemnamelink">
+							{{ result[2]['itemName'] }}
+						</a>
+					</form>
+					<br>
+					<span class="category_itemprice">
+						{{ result[2]['itemPrice'] }}&nbsp;
+					</span>
+					<span class="category_itemtaxpostage">
+						送料別
+					</span>
 
-		<tr valign="top" align="center">
-			<td style="padding:5px 5px 0px 10px;">
-				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e404402h/">
-					<div class="categoryWindowImg">
-						<img src="https://tshop.r10s.jp/rakuten24/cabinet/408/4901670111408.jpg?fitin=128:128" class="noImage">
-					</div>
-				</a>
-				<br>
-			</td>
+					<br>
+					<br>
+				</td>
+			</tr>
+		{% endif %}
 
-			<td style="padding:5px 5px 0px 5px;">
-				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e329884h/">
-					<div class="categoryWindowImg">
-						<img src="https://tshop.r10s.jp/rakuten24/cabinet/012/4531808053012.jpg?fitin=128:128" class="noImage">
-					</div>
-				</a>
-				<br>
-			</td>
+		<!-- 2列め -->
+		{% if result[5]['mediumImageUrls_1'] %}
+		<table width="80%" vspace="10" cellspacing="0" cellpadding="0" border="0">
+			<tr valign="top" align="center">
+				<!-- 色々問題あってforで回せなかったのでゴリ押しで。 -->
+				<td style="padding:5px 5px 0px 10px;">
+					<form method="get" name=form4 action="page">
+						<input type="hidden" name="good_info" value={{ result[3]['GUID'] }}>
+						<a target="_top" href="javascript:form4.submit()">
+							<div class="categoryWindowImg">
+								<img src= {{ result[3]['mediumImageUrls_1'] }} class="noImage">
+							</div>
+						</a>
+					</form>
 
-			<td style="padding:5px 10px 0px 5px;">
-				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/a001269197004/">
-					<div class="categoryWindowImg">
-						<img src="https://tshop.r10s.jp/rakuten24/cabinet/627/4903111482627.jpg?fitin=128:128" class="noImage">
-					</div>
-				</a>
-				<br>
-			</td>
-		</tr>
+					<br>
+				</td>
 
-		<tr valign="top" align="center">
-			<td style="padding:0px 5px 0px 10px;">
-				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e404402h/" class="category_itemnamelink">
+				<td style="padding:5px 5px 0px 10px;">
+					<form method="get" name=form5 action="page">
+						<input type="hidden" name="good_info" value={{ result[4]['GUID'] }}>
+						<a target="_top" href="javascript:form5.submit()">
+							<div class="categoryWindowImg">
+								<img src= {{ result[4]['mediumImageUrls_1'] }} class="noImage">
+							</div>
+						</a>
+					</form>
 
-					税抜2500円以上で送料無料（北海道・沖縄除く） / Ziploc(ジップロック) / ジップロック お手軽バッグ Sジップロック お手軽バッグ S(100枚)【StampgrpB】【Ziploc(ジップロック)】
-				</a>
-				<br>
-				<span class="category_itemprice">
-					756円&nbsp;
-				</span>
-				<span class="category_itemtaxpostage">
-					送料別
-				</span>
+					<br>
+				</td>
+				
+				<td style="padding:5px 5px 0px 10px;">
+					<form method="get" name=form6 action="page">
+						<input type="hidden" name="good_info" value={{ result[2]['GUID'] }}>
+						<a target="_top" href="javascript:form6.submit()">
+							<div class="categoryWindowImg">
+								<img src= {{ result[5]['mediumImageUrls_1'] }} class="noImage">
+							</div>
+						</a>
+					</form>
 
-				<br>
-				<br>
-			</td>
-			<td style="padding:0px 5px 0px 5px;">
-				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e329884h/" class="category_itemnamelink">
-					税抜2500円以上で送料無料（北海道・沖縄除く） / 過炭酸ナトリウム(酸素系漂白剤)過炭酸ナトリウム(酸素系漂白剤)(1kg)【rank】
-				</a>
-				<br>
-				<span class="category_itemprice">
-					381円&nbsp;
-				</span>
-				<span class="category_itemtaxpostage">
-					送料別
-				</span>
+					<br>
+				</td>
 
-				<br>
-				<br>
-			</td>
-			<td style="padding:0px 10px 0px 5px;">
-				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/a001269197004/" class="category_itemnamelink">税抜2500円以上で送料無料（北海道・沖縄除く） / シルコット / シルコット 消毒ウェットティッシュ つめかえ用シルコット 消毒ウェットティッシュ つめかえ用(40枚*3コ入)【StampgrpB】【シルコット】</a>
-				<br>
-				<span class="category_itemprice">460円&nbsp;
-				</span><span class="category_itemtaxpostage">送料別</span>
+			</tr>
 
-				<br>
-				<br>
-			</td>
+			<tr valign="top" align="center">
+				<td style="padding:0px 5px 0px 10px;">
+					<!-- formの名前重複だめ -->
+					<form method="get" name="form4_1" action="page"> 
+						<input type="hidden" name="good_info" value={{ result[3]['GUID'] }}>
+						<a target="_top" href="javascript:form4_1.submit()" class="category_itemnamelink">
+							{{ result[3]['itemName'] }}
+						</a>
+					</form>
+					<br>
+					<span class="category_itemprice">
+						{{ result[3]['itemPrice'] }}円&nbsp;
+					</span>
+					<span class="category_itemtaxpostage">
+						送料別&nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp;
+					</span>
 
-		</tr>
+					<button class="add-cart">
+						<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/plussign_23x23.png">
+					</button>
+					<button class="checkout">
+						<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/carticon_23x23.png">
+					</button>
+					<br>
+					<br>
+				</td>
+				<td style="padding:0px 5px 0px 5px;">
+					<form method="get" name="form5_2" action="page"> 
+						<input type="hidden" name="good_info" value={{ result[4]['GUID'] }}>
+						<a target="_top" href="javascript:form5_2.submit()" class="category_itemnamelink">
+							{{ result[4]['itemName'] }}
+						</a>
+					</form>
+					<br>
+					<span class="category_itemprice">
+						{{ result[4]['itemPrice'] }}&nbsp;
+					</span>
+					<span class="category_itemtaxpostage">
+						送料別
+					</span>
 
-		<tr valign="top" align="center">
-			<td style="padding:5px 5px 0px 10px;">
-				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e404402h/">
-					<div class="categoryWindowImg">
-						<img src="https://tshop.r10s.jp/rakuten24/cabinet/408/4901670111408.jpg?fitin=128:128" class="noImage">
-					</div>
-				</a>
-				<br>
-			</td>
+					<br>
+					<br>
+				</td>
+				<td style="padding:0px 5px 0px 5px;">
+					<form method="get" name="form6_3" action="page"> 
+						<input type="hidden" name="good_info" value={{ result[5]['GUID'] }}>
+						<a target="_top" href="javascript:form6_3.submit()" class="category_itemnamelink">
+							{{ result[5]['itemName'] }}
+						</a>
+					</form>
+					<br>
+					<span class="category_itemprice">
+						{{ result[5]['itemPrice'] }}&nbsp;
+					</span>
+					<span class="category_itemtaxpostage">
+						送料別
+					</span>
 
-			<td style="padding:5px 5px 0px 5px;">
-				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e329884h/">
-					<div class="categoryWindowImg">
-						<img src="https://tshop.r10s.jp/rakuten24/cabinet/012/4531808053012.jpg?fitin=128:128" class="noImage">
-					</div>
-				</a>
-				<br>
-			</td>
+					<br>
+					<br>
+				</td>
+			</tr>
+		{% endif %}
 
-			<td style="padding:5px 10px 0px 5px;">
-				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/a001269197004/">
-					<div class="categoryWindowImg">
-						<img src="https://tshop.r10s.jp/rakuten24/cabinet/627/4903111482627.jpg?fitin=128:128" class="noImage">
-					</div>
-				</a>
-				<br>
-			</td>
-		</tr>
+		<!-- 3列め -->
+		{% if result[8]['mediumImageUrls_1'] %}
+		<table width="80%" vspace="10" cellspacing="0" cellpadding="0" border="0">
+			<tr valign="top" align="center">
+				<!-- 色々問題あってforで回せなかったのでゴリ押しで。 -->
+				<td style="padding:5px 5px 0px 10px;">
+					<form method="get" name=form7 action="page">
+						<input type="hidden" name="good_info" value={{ result[6]['GUID'] }}>
+						<a target="_top" href="javascript:form7.submit()">
+							<div class="categoryWindowImg">
+								<img src= {{ result[6]['mediumImageUrls_1'] }} class="noImage">
+							</div>
+						</a>
+					</form>
 
-		<tr valign="top" align="center">
-			<td style="padding:0px 5px 0px 10px;">
-				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e404402h/" class="category_itemnamelink">
+					<br>
+				</td>
 
-					税抜2500円以上で送料無料（北海道・沖縄除く） / Ziploc(ジップロック) / ジップロック お手軽バッグ Sジップロック お手軽バッグ S(100枚)【StampgrpB】【Ziploc(ジップロック)】
-				</a>
-				<br>
-				<span class="category_itemprice">
-					756円&nbsp;
-				</span>
-				<span class="category_itemtaxpostage">
-					送料別
-				</span>
+				<td style="padding:5px 5px 0px 10px;">
+					<form method="get" name=form8 action="page">
+						<input type="hidden" name="good_info" value={{ result[7]['GUID'] }}>
+						<a target="_top" href="javascript:form8.submit()">
+							<div class="categoryWindowImg">
+								<img src= {{ result[7]['mediumImageUrls_1'] }} class="noImage">
+							</div>
+						</a>
+					</form>
 
-				<br>
-				<br>
-			</td>
-			<td style="padding:0px 5px 0px 5px;">
-				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e329884h/" class="category_itemnamelink">
-					税抜2500円以上で送料無料（北海道・沖縄除く） / 過炭酸ナトリウム(酸素系漂白剤)過炭酸ナトリウム(酸素系漂白剤)(1kg)【rank】
-				</a>
-				<br>
-				<span class="category_itemprice">
-					381円&nbsp;
-				</span>
-				<span class="category_itemtaxpostage">
-					送料別
-				</span>
+					<br>
+				</td>
+				
+				<td style="padding:5px 5px 0px 10px;">
+					<form method="get" name=form9 action="page">
+						<input type="hidden" name="good_info" value={{ result[8]['GUID'] }}>
+						<a target="_top" href="javascript:form9.submit()">
+							<div class="categoryWindowImg">
+								<img src= {{ result[8]['mediumImageUrls_1'] }} class="noImage">
+							</div>
+						</a>
+					</form>
 
-				<br>
-				<br>
-			</td>
-			<td style="padding:0px 10px 0px 5px;">
-				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/a001269197004/" class="category_itemnamelink">税抜2500円以上で送料無料（北海道・沖縄除く） / シルコット / シルコット 消毒ウェットティッシュ つめかえ用シルコット 消毒ウェットティッシュ つめかえ用(40枚*3コ入)【StampgrpB】【シルコット】</a>
-				<br>
-				<span class="category_itemprice">460円&nbsp;
-				</span><span class="category_itemtaxpostage">送料別</span>
+					<br>
+				</td>
 
-				<br>
-				<br>
-			</td>
-		</tr>
+			</tr>
 
-		<tr valign="top" align="center">
-			<td style="padding:5px 5px 0px 10px;">
-				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e404402h/">
-					<div class="categoryWindowImg">
-						<img src="https://tshop.r10s.jp/rakuten24/cabinet/408/4901670111408.jpg?fitin=128:128" class="noImage">
-					</div>
-				</a>
-				<br>
-			</td>
+			<tr valign="top" align="center">
+				<td style="padding:0px 5px 0px 10px;">
+					<!-- formの名前重複だめ -->
+					<form method="get" name="form7_1" action="page"> 
+						<input type="hidden" name="good_info" value={{ result[6]['GUID'] }}>
+						<a target="_top" href="javascript:form7_1.submit()" class="category_itemnamelink">
+							{{ result[3]['itemName'] }}
+						</a>
+					</form>
+					<br>
+					<span class="category_itemprice">
+						{{ result[6]['itemPrice'] }}円&nbsp;
+					</span>
+					<span class="category_itemtaxpostage">
+						送料別&nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp;
+					</span>
 
-			<td style="padding:5px 5px 0px 5px;">
-				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e329884h/">
-					<div class="categoryWindowImg">
-						<img src="https://tshop.r10s.jp/rakuten24/cabinet/012/4531808053012.jpg?fitin=128:128" class="noImage">
-					</div>
-				</a>
-				<br>
-			</td>
+					<button class="add-cart">
+						<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/plussign_23x23.png">
+					</button>
+					<button class="checkout">
+						<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/carticon_23x23.png">
+					</button>
+					<br>
+					<br>
+				</td>
+				<td style="padding:0px 5px 0px 5px;">
+					<form method="get" name="form8_2" action="page"> 
+						<input type="hidden" name="good_info" value={{ result[7]['GUID'] }}>
+						<a target="_top" href="javascript:form8_2.submit()" class="category_itemnamelink">
+							{{ result[7]['itemName'] }}
+						</a>
+					</form>
+					<br>
+					<span class="category_itemprice">
+						{{ result[7]['itemPrice'] }}&nbsp;
+					</span>
+					<span class="category_itemtaxpostage">
+						送料別
+					</span>
 
-			<td style="padding:5px 10px 0px 5px;">
-				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/a001269197004/">
-					<div class="categoryWindowImg">
-						<img src="https://tshop.r10s.jp/rakuten24/cabinet/627/4903111482627.jpg?fitin=128:128" class="noImage">
-					</div>
-				</a>
-				<br>
-			</td>
-		</tr>
+					<br>
+					<br>
+				</td>
+				<td style="padding:0px 5px 0px 5px;">
+					<form method="get" name="form9_3" action="page"> 
+						<input type="hidden" name="good_info" value={{ result[8]['GUID'] }}>
+						<a target="_top" href="javascript:form9_3.submit()" class="category_itemnamelink">
+							{{ result[8]['itemName'] }}
+						</a>
+					</form>
+					<br>
+					<span class="category_itemprice">
+						{{ result[8]['itemPrice'] }}&nbsp;
+					</span>
+					<span class="category_itemtaxpostage">
+						送料別
+					</span>
 
-		<tr valign="top" align="center">
-			<td style="padding:0px 5px 0px 10px;">
-				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e404402h/" class="category_itemnamelink">
+					<br>
+					<br>
+				</td>
+			</tr>
+		{% endif %}
 
-					税抜2500円以上で送料無料（北海道・沖縄除く） / Ziploc(ジップロック) / ジップロック お手軽バッグ Sジップロック お手軽バッグ S(100枚)【StampgrpB】【Ziploc(ジップロック)】
-				</a>
-				<br>
-				<span class="category_itemprice">
-					756円&nbsp;
-				</span>
-				<span class="category_itemtaxpostage">
-					送料別
-				</span>
-
-				<br>
-				<br>
-			</td>
-			<td style="padding:0px 5px 0px 5px;">
-				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/e329884h/" class="category_itemnamelink">
-					税抜2500円以上で送料無料（北海道・沖縄除く） / 過炭酸ナトリウム(酸素系漂白剤)過炭酸ナトリウム(酸素系漂白剤)(1kg)【rank】
-				</a>
-				<br>
-				<span class="category_itemprice">
-					381円&nbsp;
-				</span>
-				<span class="category_itemtaxpostage">
-					送料別
-				</span>
-
-				<br>
-				<br>
-			</td>
-			<td style="padding:0px 10px 0px 5px;">
-				<a target="_top" href="https://item.rakuten.co.jp/rakuten24/a001269197004/" class="category_itemnamelink">税抜2500円以上で送料無料（北海道・沖縄除く） / シルコット / シルコット 消毒ウェットティッシュ つめかえ用シルコット 消毒ウェットティッシュ つめかえ用(40枚*3コ入)【StampgrpB】【シルコット】</a>
-				<br>
-				<span class="category_itemprice">460円&nbsp;
-				</span><span class="category_itemtaxpostage">送料別</span>
-
-				<br>
-				<br>
-			</td>
-		</tr>
 
 
 	</table>
 
-	{{ item_data['Items'][0]['mediumImageUrls'][0] }}
 	<br>
-	{{ item_data['Items'][0]['shopUrl'] }}
-	<br>
-	{{ item_data['Items'][0]['itemName'] }}
-	<br>
-	{{ item_data['Items'][0]['itemPrice']}}
-	<br>
-	{{ result[0] }}
-	<br>
-	{{ result[0]['mediumImageUrls'] }}
+	{{ result[0]['mediumImageUrls_1'] }}
 
-
-	<!-- {{ item_data }} -->
 
 </div>
 
