@@ -6,7 +6,7 @@ import main.__init__ as init
 
 @app.route('/')
 def index():
-    title = "ようこそ"
+    title = "ようこそ" 
     message = "楽天へ"
 
     # with init.conn.cursor() as cursor:
