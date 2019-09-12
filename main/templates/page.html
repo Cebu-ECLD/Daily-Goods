@@ -254,26 +254,21 @@
             if(activebtn=="btn-1"){
                 $("#btn-2").removeClass("active");
                 $("#btn-3").removeClass("active");
-                let itemprice = $("#itemprice").html("1200");
-                $("#itempriceEach").html(String(Number(itemprice)/Number($("#num1").html())));
+                 $("#itemprice").html("1200");
+                $("#itempriceEach").html("100");
 
             }
             if(activebtn=="btn-2"){
                 $("#btn-1").removeClass("active");
                 $("#btn-3").removeClass("active");
-                console.log(Number($("#itemprice").html()));
-                let itemprice = $("#itemprice").html("2000");
-                console.log($("#num2").html());
-                let EachPrice=parseInt(itemprice)/parseInt($("#num2").html());
-                console.log(EachPrice);
-                $("#itempriceEach").html(String(Number(itemprice)/Number($("#num2").html())));
-                console.log($("#itempriceEach").html());
+                $("#itemprice").html("2160");
+                $("#itempriceEach").html("90");
             }
             if(activebtn=="btn-3"){
                 $("#btn-1").removeClass("active");
                 $("#btn-2").removeClass("active");
-                let itemprice = $("#itemprice").html("4000");
-                $("#itempriceEach").html(String(Number(itemprice)/Number($("#num3").html())));
+                $("#itemprice").html("3840");
+                $("#itempriceEach").html("80");
             }
         })
     });
