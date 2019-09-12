@@ -1,9 +1,15 @@
 from flask import Flask
-#from flask.ext.sqlalchemy import SQLAlchemy
+import pymysql.cursors
+# from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-#app.config.from_object('main.config')
+app.config.from_object('main.config')
 
-# db = SQLAlchemy(app)
+conn = pymysql.connect(host='127.0.0.1',
+                    user='root',
+                    db='rakuten_db4',
+                    charset='utf8mb4',
+                    cursorclass=pymysql.cursors.DictCursor)
+
 
 import main.views

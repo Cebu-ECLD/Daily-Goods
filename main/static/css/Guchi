@@ -1,0 +1,20 @@
+aside .category {margin-bottom: 15px;}
+aside .category .ttl {padding: 10px;background: #666666;color: #fefefe;}
+aside .category ul {border: 1px solid #e2e2e2;}
+aside .category li+li {border-top: 1px solid #e2e2e2;}
+aside .category a {padding: 15px 0 15px 70px;display: block;}
+aside .category .ico_water a {background: url(https://24.r10s.jp/_pc/img/ico_water.png) left 50% no-repeat;}
+aside .category .ico_daily a {background: url(https://24.r10s.jp/_pc/img/ico_daily.png) left 50% no-repeat;}
+aside .category .ico_food a {background: url(https://24.r10s.jp/_pc/img/ico_food.png) left 50% no-repeat;}
+aside .category .ico_health a {background: url(https://24.r10s.jp/_pc/img/ico_health.png) left 50% no-repeat;}
+aside .category .ico_cosme a {background: url(https://24.r10s.jp/_pc/img/ico_cosme.png) left 50% no-repeat;}
+aside .category .ico_medicine a {background: url(https://24.r10s.jp/_pc/img/ico_medicine.png) left 50% no-repeat;}
+aside .category .ico_medical a {background: url(https://24.r10s.jp/_pc/img/ico_medical.png) left 50% no-repeat;}
+aside .category .ico_baby a {background: url(https://24.r10s.jp/_pc/img/ico_baby.png) left 50% no-repeat;}
+aside .category .ico_pet a {background: url(https://24.r10s.jp/_pc/img/ico_pet.png) left 50% no-repeat;}
+aside .category .ico_nursing a {background: url(https://24.r10s.jp/_pc/img/ico_nursing.png) left 50% no-repeat;}
+aside .category .ico_kitchen a {background: url(https://24.r10s.jp/_pc/img/ico_kitchen.png) left 50% no-repeat;}
+aside .category .ico_homeelectronics a {background: url(https://24.r10s.jp/_pc/img/ico_homeelectronics.png) left 50% no-repeat;}
+aside .category .ico_diy a {background: url(https://24.r10s.jp/_pc/img/ico_diy.png) left 50% no-repeat;}
+aside .category .ico_sports a {background: url(https://24.r10s.jp/_pc/img/ico_sports.png) left 50% no-repeat;}
+aside .category .ico_healing a {background: url(https://24.r10s.jp/_pc/img/ico_healing.png) left 50% no-repeat;}

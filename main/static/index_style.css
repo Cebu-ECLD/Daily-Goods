@@ -1,0 +1,96 @@
+/* header*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+}
+  
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+
+.header-right {
+  display: flex;
+  flex-direction:row; 
+  justify-content:space-between;
+  color:#BF0000;
+}
+
+
+
+
+
+#form1{
+position:relative;/*フォームの相対位置*/	
+max-width:270px;/*フォームのサイズ*/ /*270*/
+margin-bottom:15px;/*フォームの下に余白*/	
+font-size: 20px; 
+color: #BF0000;
+}
+/*検索ボックス*/
+#sbox1{
+width:400px;
+position:absolute;/*フォームの絶対位置*/	
+left:500px;
+top:50px; 	
+outline:0;/*クリック時の青い枠線消す*/	
+height:40px;/*検索ボックスの高さ*/	
+padding-left: :0 8px;/*テキスト位置調整*/	
+border-radius:2px 0 0 2px;/*検索ボックスの角を丸める*/		
+background:#fff;/*検索ボックスの背景カラー*/	
+}
+/*検索ボタン*/
+#sbtn1{
+width:70px;/*検索ボタンの横幅*/ 
+height:40px;/*検索ボタンの縦幅*/ 
+position:absolute;/*検索ボタンの絶対位置*/  
+left:900px;/*検索ボタンの位置調整*/  
+top:50px;
+border-radius:0 2px 2px 0;/*検索ボタンの角を丸める*/ 
+background:#BF0000;/*検索ボタンの背景カラー*/ 
+border:none;/*検索ボタンの枠線を消す*/ 
+color:#fff;/*検索ボタンのテキストカラー*/ 
+font-weight:bold;/*検索ボタンのテキスト太字*/ 
+font-size:16px;/*検索ボタンのフォントサイズ*/ 
+}
+/*検索ボタンマウスオーバー時*/
+#sbtn1:hover{
+color:#666;/*検索ボタンマウスオーバー時のフォントカラー*/ 
+}
+
+aside .category {margin-bottom: 15px;}
+aside .category .ttl {padding: 10px;background: #BF0000;color: #fefefe;}
+aside .category ul {border: 1px solid #e2e2e2;}
+aside .category li+li {border-top: 1px solid #e2e2e2;}
+aside .category a {padding: 15px 0 15px 70px;display: block;}
+aside .category .ico_water a {background: url(https://24.r10s.jp/_pc/img/ico_water.png) left 50% no-repeat;}
+aside .category .ico_daily a {background: url(https://24.r10s.jp/_pc/img/ico_daily.png) left 50% no-repeat;}
+aside .category .ico_food a {background: url(https://24.r10s.jp/_pc/img/ico_food.png) left 50% no-repeat;}
+aside .category .ico_health a {background: url(https://24.r10s.jp/_pc/img/ico_health.png) left 50% no-repeat;}
+aside .category .ico_cosme a {background: url(https://24.r10s.jp/_pc/img/ico_cosme.png) left 50% no-repeat;}
+aside .category .ico_medicine a {background: url(https://24.r10s.jp/_pc/img/ico_medicine.png) left 50% no-repeat;}
+aside .category .ico_medical a {background: url(https://24.r10s.jp/_pc/img/ico_medical.png) left 50% no-repeat;}
+aside .category .ico_baby a {background: url(https://24.r10s.jp/_pc/img/ico_baby.png) left 50% no-repeat;}
+aside .category .ico_pet a {background: url(https://24.r10s.jp/_pc/img/ico_pet.png) left 50% no-repeat;}
+aside .category .ico_nursing a {background: url(https://24.r10s.jp/_pc/img/ico_nursing.png) left 50% no-repeat;}
+aside .category .ico_kitchen a {background: url(https://24.r10s.jp/_pc/img/ico_kitchen.png) left 50% no-repeat;}
+aside .category .ico_homeelectronics a {background: url(https://24.r10s.jp/_pc/img/ico_homeelectronics.png) left 50% no-repeat;}
+aside .category .ico_diy a {background: url(https://24.r10s.jp/_pc/img/ico_diy.png) left 50% no-repeat;}
+aside .category .ico_sports a {background: url(https://24.r10s.jp/_pc/img/ico_sports.png) left 50% no-repeat;}
+aside .category .ico_healing a {background: url(https://24.r10s.jp/_pc/img/ico_healing.png) left 50% no-repeat;}
+
+/* footer */
+.footer {
+  margin-top: 900px;
+  display: flex;
+  justify-content: center;
+  background-color: #BF0000;
+  color: #fff;
+  font-size: 18px;
+  padding: 2px 0;
+}
+
+
