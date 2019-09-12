@@ -59,8 +59,7 @@ color:#666;/*検索ボタンマウスオーバー時のフォントカラー*/
 }
 ​
 /* footer */
-.footer {
-  margin-top: 150px;
+.footerp{
   display: flex;
   justify-content: center;
   background-color: #BF0000;
@@ -68,6 +67,7 @@ color:#666;/*検索ボタンマウスオーバー時のフォントカラー*/
   font-size: 18px;
   padding: 2px 0;
 }
+
 *{
 	margin: 0;
 	padding: 0;
