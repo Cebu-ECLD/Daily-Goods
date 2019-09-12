@@ -58,7 +58,7 @@ def page():
     good_info = request.args.get('good_info')
 
     with init.conn.cursor() as cursor:
-        sql = "SELECT * FROM product_table WHERE item_tag = " + str(good_info)
+        sql = "SELECT * FROM product_table WHERE item_tag = " + str(good_info) + " ORDER BY itemquantity"
         cursor.execute(sql)
         result = cursor.fetchall()
 
