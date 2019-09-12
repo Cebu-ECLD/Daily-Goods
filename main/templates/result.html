@@ -3,21 +3,74 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Searching Result</title>
-	<link rel="stylesheet" type="text/css" href="./static/style.css">
+	<link rel="stylesheet" type="text/css" href="../static/resultstyle.css">
 </head>
 <body>
 
-	<div class="fixedSearchBar">
-		
+	<!-- header -->
+	<div class="fixed">
+		<!-- header -->
+		<div class="header">
+			<!-- header左側 -->
+			<div class="header-left">
+				<img src="../static/image/logo.png" alt="Rakutenlogo">
+			</div>
+			<!-- header右側 -->
+			<div class="header-right">
+				<a href="#" class="searchlinks">買い物かご &nbsp <span class="verticle-line">|</span></a>
+				<a href="#" class="searchlinks">アカウント &nbsp <span class="verticle-line">|</span></a>
+				<a href="#" class="searchlinks">購入履歴 &nbsp <span class="verticle-line">|</span></a>
+				<a href="#" class="searchlinks">お気に入り &nbsp <span class="verticle-line">|</span></a>
+			</div> 
+		</div>
+		​
+		<div>
+			<form id="form1" action="result" method="get">
+				<div>
+					<!--  検索窓 -->
+					<!-- <p>Let's go shopping!</p> -->
+					<input id="sbox1" type="search" name="search" placeholder="キーワードを入力"><br>
+					<input id="sbtn1" type="submit" name="submit" value="検索"><br>
+				</div>
+			</form>
+
+		</div>
 	</div>
 
-	<!-- Search bar -->
-	<div class="searchBar">
-	</div>
+	<div class="searchBar"></div>
 
-	<!-- Search Result Items -->
-	<div id="risFil" class="content">
-		<!-- Info Bar -->
+
+	<br>
+	<br>
+
+	
+	<script src="../static/jquery.min.js"></script>
+	<!-- <script src="owlcarousel/owl.carousel.min.js"></script> -->
+
+	<script type="text/javascript">
+		$(document).ready(
+			function(){
+				// $(".owl-carousel").owlCarousel({ 
+				// 	items:3,
+				// 	mouseDrag:true,
+				// 	autoplay:true
+				// });
+
+				$(".add-cart").click(function(){
+					window.open("https://item.rakuten.co.jp/rakuten24/e404402h/")
+				});
+
+
+				$(".checkout").click(function(){
+					window.open("https://item.rakuten.co.jp/rakuten24/e404402h/");
+				});
+			});
+
+		</script>
+
+		<!-- Search Result Items -->
+		<div id="risFil" class="content">
+			<!-- Info Bar -->
 	<!-- <table class="infoBar">
 		<tr>
 			<td>
@@ -48,180 +101,215 @@
 				<li class="ico_healing"><a href="https://item.rakuten.co.jp/rakuten24/c/0000006361/?s-id=r24_pc_cg_14" target="_top">癒し用品</a></li>
 			</ul>
 		</section>
-		</th:block>
+	</th:block>
 
-	</aside>
-		
-	{% if (result | count)==1 %}
-		<tr valign="top" align="center">
-			<td style="padding:0px 5px 0px 10px;">
-				<!-- formの名前重複だめ -->
-					<a target="_top" href="javascript:form4_1.submit()" class="category_itemnamelink">
-						商品が見つかりません
+</aside>
+
+{% if (result | count)==1 %}
+<tr valign="top" align="center">
+	<td style="padding:0px 5px 0px 10px;">
+		<!-- formの名前重複だめ -->
+		<a target="_top" href="javascript:form4_1.submit()" class="category_itemnamelink">
+			商品が見つかりません
+		</a>
+	</td>
+	
+</tr>
+{% endif %}
+
+{% if (result | count)>2 %}
+<table width="80%" vspace="10" cellspacing="0" cellpadding="0" border="0">
+	<tr valign="top" align="center">
+		<!-- 色々問題あってforで回せなかったのでゴリ押しで。 -->
+		<td class="picturewidth1">
+			<form method="get" name=form1 action="page">
+				<input type="hidden" name="good_info" value={{ result[0]['item_tag'] }}>
+				<a target="_top" href="javascript:form1.submit()">
+					<div class="categoryWindowImg">
+						<img src= {{ result[0]['mediumImageUrls_1'] }} class="noImage">
+					</div>
+				</a>
+			</form>
+
+			<br>
+		</td>
+
+		<td class="picturewidth2">
+			<form method="get" name=form2 action="page">
+				<input type="hidden" name="good_info" value={{ result[1]['item_tag'] }}>
+				<a target="_top" href="javascript:form2.submit()">
+					<div class="categoryWindowImg">
+						<img src= {{ result[1]['mediumImageUrls_1'] }} class="noImage">
+					</div>
+				</a>
+			</form>
+
+			<br>
+		</td>
+
+		<td class="picturewidth3">
+			<form method="get" name=form3 action="page">
+				<input type="hidden" name="good_info" value={{ result[2]['item_tag'] }}>
+				<a target="_top" href="javascript:form3.submit()">
+					<div class="categoryWindowImg">
+						<img src= {{ result[2]['mediumImageUrls_1'] }} class="noImage">
+					</div>
+				</a>
+			</form>
+
+			<br>
+		</td>
+
+	</tr>
+
+	<tr valign="top" align="center">
+		<td class="descriptionwidth1">
+			<!-- formの名前重複だめ -->
+			<div style="height: 80px;">
+				<form method="get" name="form1_1" action="page"> 
+					<input type="hidden" name="good_info" value={{ result[0]['item_tag'] }}>
+					<a target="_top" href="javascript:form1_1.submit()" class="category_itemnamelink">
+						{{ result[0]['itemName'] }}
 					</a>
-			</td>
-			
-		</tr>
-	{% endif %}
+				</form>
+			</div>
+			<br>
+			<span class="category_itemprice">
+				{{ result[0]['itemPrice'] }}円&nbsp;
+			</span>
 
-	{% if (result | count)>2 %}
-		<table width="80%" vspace="10" cellspacing="0" cellpadding="0" border="0">
-			<tr valign="top" align="center">
-				<!-- 色々問題あってforで回せなかったのでゴリ押しで。 -->
-				<td style="padding:5px 5px 0px 10px;">
-					<form method="get" name=form1 action="page">
-						<input type="hidden" name="good_info" value={{ result[0]['item_tag'] }}>
-						<a target="_top" href="javascript:form1.submit()">
-							<div class="categoryWindowImg">
-								<img src= {{ result[0]['mediumImageUrls_1'] }} class="noImage">
-							</div>
-						</a>
-					</form>
+			<span class="itempriceeach"> (300 円/本) </span>
 
-					<br>
-				</td>
+			<br>
+			<div style="float: right;">
+				<span class="category_itemtaxpostage">
+					送料別&nbsp; &nbsp;  &nbsp;
+				</span>
 
-				<td style="padding:5px 5px 0px 10px;">
-					<form method="get" name=form2 action="page">
-						<input type="hidden" name="good_info" value={{ result[1]['item_tag'] }}>
-						<a target="_top" href="javascript:form2.submit()">
-							<div class="categoryWindowImg">
-								<img src= {{ result[1]['mediumImageUrls_1'] }} class="noImage">
-							</div>
-						</a>
-					</form>
+				<button class="add-cart">
+					<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/plussign_23x23.png">
+				</button>
+				<button class="checkout">
+					<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/carticon_23x23.png">
+				</button>
+			</div>
+		</td>
+		<td class="descriptionwidth2">
+			<div style="height: 80px;">
+				<form method="get" name="form2_2" action="page"> 
+					<input type="hidden" name="good_info" value={{ result[1]['item_tag'] }}>
+					<a target="_top" href="javascript:form2_2.submit()" class="category_itemnamelink">
+						{{ result[１]['itemName'] }}
+					</a>
+				</form>
+			</div>
+			<br>
+			<span class="category_itemprice">
+				{{ result[1]['itemPrice'] }}&nbsp;
+			</span>
 
-					<br>
-				</td>
+			<span class="itempriceeach"> (300 円/本) </span>
+
+			<br>
+			<div style="float: right;">
+				<span class="category_itemtaxpostage">
+					送料別&nbsp; &nbsp;  &nbsp;
+				</span>
+				<button class="add-cart">
+					<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/plussign_23x23.png">
+				</button>
+				<button class="checkout">
+					<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/carticon_23x23.png">
+				</button>
+			</div>
+			
+		</td>
+		<td class="descriptionwidth3">
+			<div style="height: 80px;">
+				<form method="get" name="form3_3" action="page"> 
+					<input type="hidden" name="good_info" value={{ result[2]['item_tag'] }}>
+					<a target="_top" href="javascript:form3_3.submit()" class="category_itemnamelink">
+						{{ result[2]['itemName'] }}
+					</a>
+				</form>
+			</div>
+			<br>
+			<span class="category_itemprice">
+				{{ result[2]['itemPrice'] }}円&nbsp;
+			</span>
+
+			<span class="itempriceeach"> (300 円/本) </span>
+
+			<br>
+			<div style="float: right;">
+				<span class="category_itemtaxpostage">
+					送料別&nbsp; &nbsp;  &nbsp;
+				</span>
 				
-				<td style="padding:5px 5px 0px 10px;">
-					<form method="get" name=form3 action="page">
-						<input type="hidden" name="good_info" value={{ result[2]['item_tag'] }}>
-						<a target="_top" href="javascript:form3.submit()">
-							<div class="categoryWindowImg">
-								<img src= {{ result[2]['mediumImageUrls_1'] }} class="noImage">
-							</div>
-						</a>
-					</form>
-
-					<br>
-				</td>
-
-			</tr>
-
-			<tr valign="top" align="center">
-				<td style="padding:0px 5px 0px 10px;">
-					<!-- formの名前重複だめ -->
-					<form method="get" name="form1_1" action="page"> 
-						<input type="hidden" name="good_info" value={{ result[0]['item_tag'] }}>
-						<a target="_top" href="javascript:form1_1.submit()" class="category_itemnamelink">
-							{{ result[0]['itemName'] }}
-						</a>
-					</form>
-					<br>
-					<span class="category_itemprice">
-						{{ result[0]['itemPrice'] }}円&nbsp;
-					</span>
-					<span class="category_itemtaxpostage">
-						送料別&nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp;
-					</span>
-
+				<span>
 					<button class="add-cart">
 						<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/plussign_23x23.png">
 					</button>
+				</span>
+				<span>
 					<button class="checkout">
 						<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/carticon_23x23.png">
 					</button>
-					<br>
-					<br>
-				</td>
-				<td style="padding:0px 5px 0px 5px;">
-					<form method="get" name="form2_2" action="page"> 
-						<input type="hidden" name="good_info" value={{ result[1]['item_tag'] }}>
-						<a target="_top" href="javascript:form2_2.submit()" class="category_itemnamelink">
-							{{ result[１]['itemName'] }}
-						</a>
-					</form>
-					<br>
-					<span class="category_itemprice">
-						{{ result[1]['itemPrice'] }}&nbsp;
-					</span>
-					<span class="category_itemtaxpostage">
-						送料別
-					</span>
+				</span>
+			</div>
+		</td>
+	</tr>
+	{% endif %}
 
-					<br>
-					<br>
-				</td>
-				<td style="padding:0px 5px 0px 5px;">
-					<form method="get" name="form3_3" action="page"> 
-						<input type="hidden" name="good_info" value={{ result[2]['item_tag'] }}>
-						<a target="_top" href="javascript:form3_3.submit()" class="category_itemnamelink">
-							{{ result[2]['itemName'] }}
-						</a>
-					</form>
-					<br>
-					<span class="category_itemprice">
-						{{ result[2]['itemPrice'] }}&nbsp;
-					</span>
-					<span class="category_itemtaxpostage">
-						送料別
-					</span>
+	<!-- 2列め -->
+	{% if (result | count)>5 %}
+	<table width="80%" vspace="10" cellspacing="0" cellpadding="0" border="0">
+		<tr valign="top" align="center">
+			<!-- 色々問題あってforで回せなかったのでゴリ押しで。 -->
+			<td class="picturewidth1">
+				<form method="get" name=form4 action="page">
+					<input type="hidden" name="good_info" value={{ result[3]['item_tag'] }}>
+					<a target="_top" href="javascript:form4.submit()">
+						<div class="categoryWindowImg">
+							<img src= {{ result[3]['mediumImageUrls_1'] }} class="noImage">
+						</div>
+					</a>
+				</form>
 
-					<br>
-					<br>
-				</td>
-			</tr>
-		{% endif %}
+				<br>
+			</td>
 
-		<!-- 2列め -->
-		{% if (result | count)>5 %}
-		<table width="80%" vspace="10" cellspacing="0" cellpadding="0" border="0">
-			<tr valign="top" align="center">
-				<!-- 色々問題あってforで回せなかったのでゴリ押しで。 -->
-				<td style="padding:5px 5px 0px 10px;">
-					<form method="get" name=form4 action="page">
-						<input type="hidden" name="good_info" value={{ result[3]['item_tag'] }}>
-						<a target="_top" href="javascript:form4.submit()">
-							<div class="categoryWindowImg">
-								<img src= {{ result[3]['mediumImageUrls_1'] }} class="noImage">
-							</div>
-						</a>
-					</form>
+			<td class="picturewidth2">
+				<form method="get" name=form5 action="page">
+					<input type="hidden" name="good_info" value={{ result[4]['item_tag'] }}>
+					<a target="_top" href="javascript:form5.submit()">
+						<div class="categoryWindowImg">
+							<img src= {{ result[4]['mediumImageUrls_1'] }} class="noImage">
+						</div>
+					</a>
+				</form>
 
-					<br>
-				</td>
+				<br>
+			</td>
 
-				<td style="padding:5px 5px 0px 10px;">
-					<form method="get" name=form5 action="page">
-						<input type="hidden" name="good_info" value={{ result[4]['item_tag'] }}>
-						<a target="_top" href="javascript:form5.submit()">
-							<div class="categoryWindowImg">
-								<img src= {{ result[4]['mediumImageUrls_1'] }} class="noImage">
-							</div>
-						</a>
-					</form>
+			<td class="picturewidth3">
+				<form method="get" name=form6 action="page">
+					<input type="hidden" name="good_info" value={{ result[2]['item_tag'] }}>
+					<a target="_top" href="javascript:form6.submit()">
+						<div class="categoryWindowImg">
+							<img src= {{ result[5]['mediumImageUrls_1'] }} class="noImage">
+						</div>
+					</a>
+				</form>
 
-					<br>
-				</td>
-				
-				<td style="padding:5px 5px 0px 10px;">
-					<form method="get" name=form6 action="page">
-						<input type="hidden" name="good_info" value={{ result[2]['item_tag'] }}>
-						<a target="_top" href="javascript:form6.submit()">
-							<div class="categoryWindowImg">
-								<img src= {{ result[5]['mediumImageUrls_1'] }} class="noImage">
-							</div>
-						</a>
-					</form>
+				<br>
+			</td>
 
-					<br>
-				</td>
+		</tr>
 
-			</tr>
-
-			<tr valign="top" align="center">
-				<td style="padding:0px 5px 0px 10px;">
+		<tr valign="top" align="center">
+			<td class="descriptionwidth1">
+				<div style="height: 80px;">
 					<!-- formの名前重複だめ -->
 					<form method="get" name="form4_1" action="page"> 
 						<input type="hidden" name="good_info" value={{ result[3]['item_tag'] }}>
@@ -229,60 +317,101 @@
 							{{ result[3]['itemName'] }}
 						</a>
 					</form>
-					<br>
-					<span class="category_itemprice">
-						{{ result[3]['itemPrice'] }}円&nbsp;
-					</span>
+				</div>
+				<br>
+				<span class="category_itemprice">
+					{{ result[3]['itemPrice'] }}円&nbsp;
+				</span>
+
+				<span class="itempriceeach"> (300 円/本) </span>
+
+				<br>
+				<div style="float: right;">
 					<span class="category_itemtaxpostage">
-						送料別&nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp;
+						送料別&nbsp; &nbsp;  &nbsp;
 					</span>
 
-					<button class="add-cart">
-						<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/plussign_23x23.png">
-					</button>
-					<button class="checkout">
-						<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/carticon_23x23.png">
-					</button>
-					<br>
-					<br>
-				</td>
-				<td style="padding:0px 5px 0px 5px;">
+					<span>
+						<button class="add-cart">
+							<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/plussign_23x23.png">
+						</button>
+					</span>
+					<span>
+						<button class="checkout">
+							<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/carticon_23x23.png">
+						</button>
+					</span>
+				</div>
+			</td>
+			<td class="descriptionwidth2">
+				<div style="height: 80px;">
 					<form method="get" name="form5_2" action="page"> 
 						<input type="hidden" name="good_info" value={{ result[4]['item_tag'] }}>
 						<a target="_top" href="javascript:form5_2.submit()" class="category_itemnamelink">
 							{{ result[4]['itemName'] }}
 						</a>
 					</form>
-					<br>
-					<span class="category_itemprice">
-						{{ result[4]['itemPrice'] }}&nbsp;
-					</span>
+				</div>
+				<br>
+				<span class="category_itemprice">
+					{{ result[4]['itemPrice'] }}&nbsp;
+				</span>
+
+				<span class="itempriceeach"> (300 円/本) </span>
+
+				<br>
+				<div style="float: right;">
 					<span class="category_itemtaxpostage">
-						送料別
+						送料別&nbsp; &nbsp;  &nbsp;
 					</span>
 
-					<br>
-					<br>
-				</td>
-				<td style="padding:0px 5px 0px 5px;">
+					<span>
+						<button class="add-cart">
+							<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/plussign_23x23.png">
+						</button>
+					</span>
+					<span>
+						<button class="checkout">
+							<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/carticon_23x23.png">
+						</button>
+					</span>
+				</div>
+			</td>
+			<td class="descriptionwidth3">
+				<div style="height: 80px;">
+
 					<form method="get" name="form6_3" action="page"> 
 						<input type="hidden" name="good_info" value={{ result[5]['item_tag'] }}>
 						<a target="_top" href="javascript:form6_3.submit()" class="category_itemnamelink">
 							{{ result[5]['itemName'] }}
 						</a>
 					</form>
-					<br>
-					<span class="category_itemprice">
-						{{ result[5]['itemPrice'] }}&nbsp;
-					</span>
+				</div>
+				<br>
+				<span class="category_itemprice">
+					{{ result[5]['itemPrice'] }}&nbsp;
+				</span>
+				<span class="itempriceeach"> (300 円/本) </span>
+
+				<br>
+				<div style="float: right;">
 					<span class="category_itemtaxpostage">
-						送料別
+						送料別&nbsp; &nbsp;  &nbsp;
 					</span>
 
-					<br>
-					<br>
-				</td>
-			</tr>
+					<span>
+						<button class="add-cart">
+							<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/plussign_23x23.png">
+						</button>
+					</span>
+					<span>
+						<button class="checkout">
+							<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/carticon_23x23.png">
+						</button>
+					</span>
+				</div>
+			</td>
+		</tr>
 		{% endif %}
 
 		<!-- 3列め -->
@@ -290,7 +419,7 @@
 		<table width="80%" vspace="10" cellspacing="0" cellpadding="0" border="0">
 			<tr valign="top" align="center">
 				<!-- 色々問題あってforで回せなかったのでゴリ押しで。 -->
-				<td style="padding:5px 5px 0px 10px;">
+				<td class="picturewidth1">
 					<form method="get" name=form7 action="page">
 						<input type="hidden" name="good_info" value={{ result[6]['item_tag'] }}>
 						<a target="_top" href="javascript:form7.submit()">
@@ -303,7 +432,7 @@
 					<br>
 				</td>
 
-				<td style="padding:5px 5px 0px 10px;">
+				<td class="picturewidth2">
 					<form method="get" name=form8 action="page">
 						<input type="hidden" name="good_info" value={{ result[7]['item_tag'] }}>
 						<a target="_top" href="javascript:form8.submit()">
@@ -316,7 +445,7 @@
 					<br>
 				</td>
 				
-				<td style="padding:5px 5px 0px 10px;">
+				<td class="picturewidth3">
 					<form method="get" name=form9 action="page">
 						<input type="hidden" name="good_info" value={{ result[8]['item_tag'] }}>
 						<a target="_top" href="javascript:form9.submit()">
@@ -332,73 +461,112 @@
 			</tr>
 
 			<tr valign="top" align="center">
-				<td style="padding:0px 5px 0px 10px;">
-					<!-- formの名前重複だめ -->
-					<form method="get" name="form7_1" action="page"> 
-						<input type="hidden" name="good_info" value={{ result[6]['item_tag'] }}>
-						<a target="_top" href="javascript:form7_1.submit()" class="category_itemnamelink">
-							{{ result[3]['itemName'] }}
-						</a>
-					</form>
+				<td class="descriptionwidth1">
+					<div style="height: 80px;">
+						<!-- formの名前重複だめ -->
+						<form method="get" name="form7_1" action="page"> 
+							<input type="hidden" name="good_info" value={{ result[6]['item_tag'] }}>
+							<a target="_top" href="javascript:form7_1.submit()" class="category_itemnamelink">
+								{{ result[3]['itemName'] }}
+							</a>
+						</form>
+					</div>
 					<br>
 					<span class="category_itemprice">
 						{{ result[6]['itemPrice'] }}円&nbsp;
 					</span>
-					<span class="category_itemtaxpostage">
-						送料別&nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp;
-					</span>
+					<span class="itempriceeach"> (300 円/本) </span>
 
-					<button class="add-cart">
-						<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/plussign_23x23.png">
-					</button>
-					<button class="checkout">
-						<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/carticon_23x23.png">
-					</button>
 					<br>
-					<br>
+					<div style="float: right;">
+						<span class="category_itemtaxpostage">
+							送料別&nbsp; &nbsp;  &nbsp;
+						</span>
+
+						<span>
+							<button class="add-cart">
+								<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/plussign_23x23.png">
+							</button>
+						</span>
+						<span>
+							<button class="checkout">
+								<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/carticon_23x23.png">
+							</button>
+						</span>
+					</div>
 				</td>
-				<td style="padding:0px 5px 0px 5px;">
-					<form method="get" name="form8_2" action="page"> 
-						<input type="hidden" name="good_info" value={{ result[7]['item_tag'] }}>
-						<a target="_top" href="javascript:form8_2.submit()" class="category_itemnamelink">
-							{{ result[7]['itemName'] }}
-						</a>
-					</form>
+				<td class="descriptionwidth2">
+					<div style="height: 80px;">
+						<form method="get" name="form8_2" action="page"> 
+							<input type="hidden" name="good_info" value={{ result[7]['item_tag'] }}>
+							<a target="_top" href="javascript:form8_2.submit()" class="category_itemnamelink">
+								{{ result[7]['itemName'] }}
+							</a>
+						</form>
+					</div>
 					<br>
 					<span class="category_itemprice">
 						{{ result[7]['itemPrice'] }}&nbsp;
 					</span>
-					<span class="category_itemtaxpostage">
-						送料別
-					</span>
+					<span class="itempriceeach"> (300 円/本) </span>
 
 					<br>
-					<br>
+					<div style="float: right;">
+						<span class="category_itemtaxpostage">
+							送料別&nbsp; &nbsp;  &nbsp;
+						</span>
+						
+						<span>
+							<button class="add-cart">
+								<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/plussign_23x23.png">
+							</button>
+						</span>
+						<span>
+							<button class="checkout">
+								<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/carticon_23x23.png">
+							</button>
+						</span>
+					</div>
 				</td>
-				<td style="padding:0px 5px 0px 5px;">
-					<form method="get" name="form9_3" action="page"> 
-						<input type="hidden" name="good_info" value={{ result[8]['item_tag'] }}>
-						<a target="_top" href="javascript:form9_3.submit()" class="category_itemnamelink">
-							{{ result[8]['itemName'] }}
-						</a>
-					</form>
+				<td class="descriptionwidth3">
+					<div style="height: 80px;">
+						<form method="get" name="form9_3" action="page"> 
+							<input type="hidden" name="good_info" value={{ result[8]['item_tag'] }}>
+							<a target="_top" href="javascript:form9_3.submit()" class="category_itemnamelink">
+								{{ result[8]['itemName'] }}
+							</a>
+						</form>
+					</div>
 					<br>
 					<span class="category_itemprice">
 						{{ result[8]['itemPrice'] }}&nbsp;
 					</span>
-					<span class="category_itemtaxpostage">
-						送料別
-					</span>
+					<span class="itempriceeach"> (300 円/本) </span>
 
 					<br>
-					<br>
+					<div style="float: right;">
+						<span class="category_itemtaxpostage">
+							送料別&nbsp; &nbsp;  &nbsp;
+						</span>
+						
+						<span>
+							<button class="add-cart">
+								<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/plussign_23x23.png">
+							</button>
+						</span>
+						<span>
+							<button class="checkout">
+								<img src="https://r.r10s.jp/com/img/rms/storefront/pc/page/carticon_23x23.png">
+							</button>
+						</span>
+					</div>
 				</td>
 			</tr>
-		{% endif %}
+			{% endif %}
 
 
 
-	</table>
+		</table>
 
 	<!-- <br>
 	{{ result[0]['mediumImageUrls_1'] }}

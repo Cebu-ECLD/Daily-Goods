@@ -7,7 +7,7 @@ app.config.from_object('main.config')
 
 conn = pymysql.connect(host='127.0.0.1',
                     user='root',
-                    db='rakuten_db4',
+                    db='rakuten_db',
                     charset='utf8mb4',
                     cursorclass=pymysql.cursors.DictCursor)
 
