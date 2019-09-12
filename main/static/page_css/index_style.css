@@ -28,12 +28,12 @@ color: #BF0000;
 }
 /*検索ボックス*/
 #sbox1{
-width:400px;
+width:700px;
 position:absolute;/*フォームの絶対位置*/	
-left:500px;
+left:550px;
 top:50px; 	
 outline:0;/*クリック時の青い枠線消す*/	
-height:40px;/*検索ボックスの高さ*/	
+height:50px;/*検索ボックスの高さ*/	
 padding-left: :0 8px;/*テキスト位置調整*/	
 border-radius:2px 0 0 2px;/*検索ボックスの角を丸める*/		
 background:#fff;/*検索ボックスの背景カラー*/	
@@ -41,9 +41,9 @@ background:#fff;/*検索ボックスの背景カラー*/
 /*検索ボタン*/
 #sbtn1{
 width:70px;/*検索ボタンの横幅*/ 
-height:40px;/*検索ボタンの縦幅*/ 
+height:50px;/*検索ボタンの縦幅*/ 
 position:absolute;/*検索ボタンの絶対位置*/  
-left:900px;/*検索ボタンの位置調整*/  
+left:1250px;/*検索ボタンの位置調整*/  
 top:50px;
 border-radius:0 2px 2px 0;/*検索ボタンの角を丸める*/ 
 background:#BF0000;/*検索ボタンの背景カラー*/ 
