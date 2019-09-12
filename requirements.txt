@@ -1,2 +1,9 @@
+<<<<<<< HEAD
 Flask
 PyMySQL
+=======
+###### Requirements without Version Specifiers ######
+pymysql
+flask
+pandas
+>>>>>>> develop
