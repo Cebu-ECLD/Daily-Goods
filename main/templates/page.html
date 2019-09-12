@@ -1,14 +1,297 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-  <head>
+<head>
+    <!-- Required meta tags -->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="jquery.min.js"></script>
+    <script src="../static/page_js/owl.carousel.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/igorlino/elevatezoom-plus/1.1.6/src/jquery.ez-plus.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" -->
+    <link rel="stylesheet" href="../static/page_css/bootstrap.css">
+    <link rel="stylesheet" href="../static/page_css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../static/page_css/style.css">
+    <link rel="stylesheet" href="../static/page_css/owl.carousel.css">
+    <link rel="stylesheet" href="../static/page_css/owl.theme.default.css">
+    <link rel="stylesheet" href="../static/page_css/index_style.css">
+    <title>Goods Page</title>
+</head>
+
+
+<!--this is the body part-->
+<body>
+
+        <div class="blankbar">
+        </div>
+        <div class="searchbar">
+                <!-- header左側 -->
+            <div class="header">
+                <!-- header左側 -->
+                <div class="header-left">
+                    <img src="../static/image/logo.png" alt="Rakutenlogo">
+                </div>
+                <!-- header右側 -->
+                <div class="header-right">
+                    <a href="#" class="searchlinks">買い物かご &nbsp <span class="vertical-line">|</span></a>
+                    <a href="#" class="searchlinks">アカウント &nbsp <span class="vertical-line">|</span></a>
+                    <a href="#" class="searchlinks">購入履歴 &nbsp <span class="vertical-line">|</span></a>
+                    <a href="#" class="searchlinks">お気に入り &nbsp </a>
+                </div> 
+            </div>
+
+            <div>
+               <form  action="result" method="get">
+                   <div>
+                       <!-- 検索窓 -->
+                       <input id="sbox1-page" type="search" name="search" placeholder="キーワードを入力"><br>
+                       <input id="sbtn1-page" type="submit" name="submit" value="検索"><br>
+                   </div>
+               </form>
+           </div>
+            <!-- header右側 -->
+        </div>
+
+
+    <div class="container-fluid">
+        <!--this is the search bar-->
+
+    <!--this is the end of search bar-->
+
+        <div class="row">
+            <!--tHIS IS THE CODE FORM GOCHI-->
+            <div class="col-lg-2 col-xl-2">
+                <aside width="50%">
+                 <th:block th:fragment="comp">
+                 <section class="category">
+                    <div class="ttl">カテゴリから探す</div>
+                    <ul>
+                        <li class="ico_water"><a href="https://item.rakuten.co.jp/rakuten24/c/0000009966/?s-id=r24_pc_cg_01" target="_top">水・飲料</a></li>
+                        <li class="ico_daily"><a href="https://item.rakuten.co.jp/rakuten24/c/0000007422/?s-id=r24_pc_cg_02" target="_top">日用品</a></li>
+                        <li class="ico_food"><a href="https://item.rakuten.co.jp/rakuten24/c/0000008983/?s-id=r24_pc_cg_03" target="_top">フード</a></li>
+                        <li class="ico_health"><a href="https://item.rakuten.co.jp/rakuten24/c/0000005960/?s-id=r24_pc_cg_04" target="_top">健康食品</a></li>
+                        <li class="ico_medicine"><a href="https://item.rakuten.co.jp/rakuten24/c/0000014487/?s-id=r24_pc_cg_05" target="_top">医薬品</a></li>
+                        <li class="ico_cosme"><a href="https://item.rakuten.co.jp/rakuten24/c/0000006584/?s-id=r24_pc_cg_06" target="_top">化粧品</a></li>
+                        <li class="ico_medical"><a href="https://item.rakuten.co.jp/rakuten24/c/0000008356/?s-id=r24_pc_cg_07" target="_top">衛生医療</a></li>
+                        <li class="ico_baby"><a href="https://item.rakuten.co.jp/rakuten24/c/0000008698/?s-id=r24_pc_cg_08" target="_top">ベビー＆キッズ</a></li>
+                        <li class="ico_pet"><a href="https://item.rakuten.co.jp/rakuten24/c/0000009459/?s-id=r24_pc_cg_09" target="_top">ペット用品</a></li>
+                        <li class="ico_nursing"><a href="https://item.rakuten.co.jp/rakuten24/c/0000009814/?s-id=r24_pc_cg_10" target="_top">介護</a></li>
+                        <li class="ico_kitchen"><a href="https://item.rakuten.co.jp/rakuten24/c/0000010104/?s-id=r24_pc_cg_11" target="_top">ホーム＆キッチン</a></li>
+                        <li class="ico_homeelectronics"><a href="https://item.rakuten.co.jp/rakuten24/c/0000006506/?s-id=r24_pc_cg_12" target="_top">家電</a></li>
+                        <li class="ico_sports"><a href="https://item.rakuten.co.jp/rakuten24/c/0000006475/?s-id=r24_pc_cg_13" target="_top">スポーツ</a></li>
+                        <li class="ico_healing"><a href="https://item.rakuten.co.jp/rakuten24/c/0000006361/?s-id=r24_pc_cg_14" target="_top">癒し用品</a></li>
+                    </ul>
+                </section>
+            </th:block>
+        </aside>
+
+    </div>
+    <!--tHIS IS THE CODE FORM GOCHI-->
+
+
+    <div class="col-lg-5 col-xl-5">
+        <img id="itemimage" src="../static/image/rem.jpeg" data-zoom-image="../static/image/rem.jpeg" class="rounded" alt="this is an image" width="100%">
+        <div class="owl-carousel owl-theme">
+            <div class="divimg"><img id="product-img1" src="../static/image/rem.jpeg" class="rounded itemimgs" alt="this is an image" width="90%"></div>
+            <div class="divimg"><img id="product-img2" src="../static/image/water.jpg" class="rounded itemimgs" alt="this is an image" width="90%"></div>
+            <div class="divimg"><img id="product-img3" src="../static/image/rem.jpeg" class="rounded itemimgs" alt="this is an image" width="90%"></div>
+            <div class="divimg"><img id="product-img4" src="../static/image/water.jpg" class="rounded itemimgs" alt="this is an image" width="90%"></div>
+        </div>
+    </div>
+
+    <div class="col-lg-5 col-xl-5" >
+        <h2 id="itemname">this is the name of the product</h2>
+        <p id="itemnumber" class="text-muted"> number of product xxxxxxxxx </p>
+        <div class="row">
+            <div class="col-md-2">
+                <button type="button" class="btn-quantity btn btn-outline-secondary active" id="btn-1"><span id="num1">12</span>本</button>
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn-quantity btn btn-outline-secondary" id="btn-2"><span id="num2">24</span>本</button>
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn-quantity btn btn-outline-secondary" id="btn-3"><span id="num3">48</span>本</button>
+            </div>
+        </div>
+        <h6 class="text-danger" id="price">価格 
+            <span id="itemprice" class="bigfonts">1200</span> 
+            <span class="bigfonts">円</span> 
+            <span id="itempriceEach">100</span>円/本（税入）</h6>
+        <div class="row">
+            <div class="col-md-12">
+                <h6 class="text-danger">
+                    <img src="../static/image/icon_point.png" height="22px">
+                    14ポイント（1倍）
+                </h6>
+            </div>
+        </div> 
+
+        <div>
+          <h4>QUICK REVIEW</h4>
+          <hr>
+          <p class="text-muted" id="itemdiscription">this is the details of this product</p>
+      </div>
+      <div>
+          <h4>配送</h4>
+          <hr>
+          <div class="row">
+            <div class="col-md-4">
+                <p class="text-muted">送料648円</p>
+            </div>
+            <div class="col-md-8">
+                <p class="text-muted">東京都への最安送料</p>
+                <p class="text-muted">宅配便</p>
+                <a href="">すべての配送方法と送料を見る</a>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <button  id="minus-btn" class="btn btn-outline-secondary btn-xs" type="button" onmouseover="changeMouseOn()" onmouseout="changeMouseOff()" >-</button>
+            </div>
+            <input id="num-product" type="text" class="text-center form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" value="1">
+            <div class="input-group-append">
+             <button id="plus-btn" class="btn btn-outline-secondary btn-xs" type="button">+</button>
+         </div>
+     </div>
+
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-block btn-danger btn-sm"><img src="../static/image/plussign_23x23.png">ご購入手続きへ</button>
+
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-block btn-danger btn-sm"><img src="../static/image/carticon_23x23.png">商品をかごに追加</button>
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<div class="footer-page">
+    <p>Rakuten-Daily.inc</p>
+</div>
+
+<script>
+    $(document).ready(function(){
+      $("#minus-btn").click(function(){
+        $("#num-product").val(Number($("#num-product").val())-1)
+        if( $("#num-product").val()<=1){
+            $("#minus-btn").attr("disabled",true)
+        }
+    });
+  });
+</script>>
+
+<script>
+    $(document).ready(function(){
+      $("#plus-btn").click(function(){
+        $("#num-product").val(Number($("#num-product").val())+1)
+        if( $("#num-product").val()>1){
+            $("#minus-btn").attr("disabled",false)
+        }
+    });
+  });
+</script>
+
+<script>
+    $(document).ready(function(){
+      if($("#num-product").val()<=1){
+        $("#minus-btn").attr("disabled",true);
+    };
+});
     
-  </head>
-  <body>
-  　<h1>Hello!</h1>
-    <h2 class="h1" id='test'>ようこそ</h2>
-    
-      {{ title }}　
-      {{ message }}<br>
-  
-  </body>
+</script>  
+
+
+<script>
+    $(document).ready(function(){
+      $(".owl-carousel").owlCarousel({
+        stagePadding:50,
+        items:3,
+        margin:10,
+        nav:true,
+        responsiveRefreshRate:200,
+        autoplay:true
+    });
+  });
+</script>
+
+<script>
+    $(document).ready(function(){
+      $(".itemimgs").click(function(){
+            $("#itemimage").attr("src",$(this).attr("src"));
+            $("#itemimage").attr("data-zoom-image",$(this).attr("src"));
+            console.log($("#itemimage").attr("data-zoom-image"));
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#itemimage").ezPlus({
+            zoomWindowWidth:500,
+            zoomWindowHeight:500
+        });    
+    });
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".btn-quantity").click(function(){
+            let activebtn = $(this).attr("id");
+            if($(this).hasClass("active")==0){
+                $(this).addClass("active");
+            }
+            if(activebtn=="btn-1"){
+                $("#btn-2").removeClass("active");
+                $("#btn-3").removeClass("active");
+                let itemprice = $("#itemprice").html("1200");
+                $("#itempriceEach").html(String(Number(itemprice)/Number($("#num1").html())));
+
+            }
+            if(activebtn=="btn-2"){
+                $("#btn-1").removeClass("active");
+                $("#btn-3").removeClass("active");
+                console.log(Number($("#itemprice").html()));
+                let itemprice = $("#itemprice").html("2000");
+                console.log($("#num2").html());
+                let EachPrice=parseInt(itemprice)/parseInt($("#num2").html());
+                console.log(EachPrice);
+                $("#itempriceEach").html(String(Number(itemprice)/Number($("#num2").html())));
+                console.log($("#itempriceEach").html());
+            }
+            if(activebtn=="btn-3"){
+                $("#btn-1").removeClass("active");
+                $("#btn-2").removeClass("active");
+                let itemprice = $("#itemprice").html("4000");
+                $("#itempriceEach").html(String(Number(itemprice)/Number($("#num3").html())));
+            }
+        })
+    });
+</script>>
+<!--script>
+$(document).ready(function(){
+    $.getJSON("test.json",function(data){
+        let jsonData = data;
+            $("#plus-btn").click(function(){
+            $("#itemname").html(jsonData.itemname);
+            $("#itemnumber").html(jsonData.itemnumber);
+            $("#itemdiscription").html(jsonData.itemdiscription);
+            $("#itemimage").attr("src","imgs/water.jpg");
+    })
+    })
+});
+</script-->
+
+
+</body>
 </html>
