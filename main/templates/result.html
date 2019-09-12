@@ -52,13 +52,25 @@
 
 	</aside>
 	
-	{% if result[2]['mediumImageUrls_1'] %}
+	{% if (result | count)==1 %}
+		<tr valign="top" align="center">
+			<td style="padding:0px 5px 0px 10px;">
+				<!-- formの名前重複だめ -->
+					<a target="_top" href="javascript:form4_1.submit()" class="category_itemnamelink">
+						商品が見つかりません
+					</a>
+			</td>
+			
+		</tr>
+	{% endif %}
+
+	{% if (result | count)>2 %}
 		<table width="80%" vspace="10" cellspacing="0" cellpadding="0" border="0">
 			<tr valign="top" align="center">
 				<!-- 色々問題あってforで回せなかったのでゴリ押しで。 -->
 				<td style="padding:5px 5px 0px 10px;">
 					<form method="get" name=form1 action="page">
-						<input type="hidden" name="good_info" value={{ result[0]['GUID'] }}>
+						<input type="hidden" name="good_info" value={{ result[0]['item_tag'] }}>
 						<a target="_top" href="javascript:form1.submit()">
 							<div class="categoryWindowImg">
 								<img src= {{ result[0]['mediumImageUrls_1'] }} class="noImage">
@@ -71,7 +83,7 @@
 
 				<td style="padding:5px 5px 0px 10px;">
 					<form method="get" name=form2 action="page">
-						<input type="hidden" name="good_info" value={{ result[1]['GUID'] }}>
+						<input type="hidden" name="good_info" value={{ result[1]['item_tag'] }}>
 						<a target="_top" href="javascript:form2.submit()">
 							<div class="categoryWindowImg">
 								<img src= {{ result[1]['mediumImageUrls_1'] }} class="noImage">
@@ -84,7 +96,7 @@
 				
 				<td style="padding:5px 5px 0px 10px;">
 					<form method="get" name=form3 action="page">
-						<input type="hidden" name="good_info" value={{ result[2]['GUID'] }}>
+						<input type="hidden" name="good_info" value={{ result[2]['item_tag'] }}>
 						<a target="_top" href="javascript:form3.submit()">
 							<div class="categoryWindowImg">
 								<img src= {{ result[2]['mediumImageUrls_1'] }} class="noImage">
@@ -101,7 +113,7 @@
 				<td style="padding:0px 5px 0px 10px;">
 					<!-- formの名前重複だめ -->
 					<form method="get" name="form1_1" action="page"> 
-						<input type="hidden" name="good_info" value={{ result[0]['GUID'] }}>
+						<input type="hidden" name="good_info" value={{ result[0]['item_tag'] }}>
 						<a target="_top" href="javascript:form1_1.submit()" class="category_itemnamelink">
 							{{ result[0]['itemName'] }}
 						</a>
@@ -125,7 +137,7 @@
 				</td>
 				<td style="padding:0px 5px 0px 5px;">
 					<form method="get" name="form2_2" action="page"> 
-						<input type="hidden" name="good_info" value={{ result[1]['GUID'] }}>
+						<input type="hidden" name="good_info" value={{ result[1]['item_tag'] }}>
 						<a target="_top" href="javascript:form2_2.submit()" class="category_itemnamelink">
 							{{ result[１]['itemName'] }}
 						</a>
@@ -143,7 +155,7 @@
 				</td>
 				<td style="padding:0px 5px 0px 5px;">
 					<form method="get" name="form3_3" action="page"> 
-						<input type="hidden" name="good_info" value={{ result[2]['GUID'] }}>
+						<input type="hidden" name="good_info" value={{ result[2]['item_tag'] }}>
 						<a target="_top" href="javascript:form3_3.submit()" class="category_itemnamelink">
 							{{ result[2]['itemName'] }}
 						</a>
@@ -163,13 +175,13 @@
 		{% endif %}
 
 		<!-- 2列め -->
-		{% if result[5]['mediumImageUrls_1'] %}
+		{% if (result | count)>5 %}
 		<table width="80%" vspace="10" cellspacing="0" cellpadding="0" border="0">
 			<tr valign="top" align="center">
 				<!-- 色々問題あってforで回せなかったのでゴリ押しで。 -->
 				<td style="padding:5px 5px 0px 10px;">
 					<form method="get" name=form4 action="page">
-						<input type="hidden" name="good_info" value={{ result[3]['GUID'] }}>
+						<input type="hidden" name="good_info" value={{ result[3]['item_tag'] }}>
 						<a target="_top" href="javascript:form4.submit()">
 							<div class="categoryWindowImg">
 								<img src= {{ result[3]['mediumImageUrls_1'] }} class="noImage">
@@ -182,7 +194,7 @@
 
 				<td style="padding:5px 5px 0px 10px;">
 					<form method="get" name=form5 action="page">
-						<input type="hidden" name="good_info" value={{ result[4]['GUID'] }}>
+						<input type="hidden" name="good_info" value={{ result[4]['item_tag'] }}>
 						<a target="_top" href="javascript:form5.submit()">
 							<div class="categoryWindowImg">
 								<img src= {{ result[4]['mediumImageUrls_1'] }} class="noImage">
@@ -195,7 +207,7 @@
 				
 				<td style="padding:5px 5px 0px 10px;">
 					<form method="get" name=form6 action="page">
-						<input type="hidden" name="good_info" value={{ result[2]['GUID'] }}>
+						<input type="hidden" name="good_info" value={{ result[2]['item_tag'] }}>
 						<a target="_top" href="javascript:form6.submit()">
 							<div class="categoryWindowImg">
 								<img src= {{ result[5]['mediumImageUrls_1'] }} class="noImage">
@@ -212,7 +224,7 @@
 				<td style="padding:0px 5px 0px 10px;">
 					<!-- formの名前重複だめ -->
 					<form method="get" name="form4_1" action="page"> 
-						<input type="hidden" name="good_info" value={{ result[3]['GUID'] }}>
+						<input type="hidden" name="good_info" value={{ result[3]['item_tag'] }}>
 						<a target="_top" href="javascript:form4_1.submit()" class="category_itemnamelink">
 							{{ result[3]['itemName'] }}
 						</a>
@@ -236,7 +248,7 @@
 				</td>
 				<td style="padding:0px 5px 0px 5px;">
 					<form method="get" name="form5_2" action="page"> 
-						<input type="hidden" name="good_info" value={{ result[4]['GUID'] }}>
+						<input type="hidden" name="good_info" value={{ result[4]['item_tag'] }}>
 						<a target="_top" href="javascript:form5_2.submit()" class="category_itemnamelink">
 							{{ result[4]['itemName'] }}
 						</a>
@@ -254,7 +266,7 @@
 				</td>
 				<td style="padding:0px 5px 0px 5px;">
 					<form method="get" name="form6_3" action="page"> 
-						<input type="hidden" name="good_info" value={{ result[5]['GUID'] }}>
+						<input type="hidden" name="good_info" value={{ result[5]['item_tag'] }}>
 						<a target="_top" href="javascript:form6_3.submit()" class="category_itemnamelink">
 							{{ result[5]['itemName'] }}
 						</a>
@@ -274,13 +286,13 @@
 		{% endif %}
 
 		<!-- 3列め -->
-		{% if result[8]['mediumImageUrls_1'] %}
+		{% if (result | count)>8 %}
 		<table width="80%" vspace="10" cellspacing="0" cellpadding="0" border="0">
 			<tr valign="top" align="center">
 				<!-- 色々問題あってforで回せなかったのでゴリ押しで。 -->
 				<td style="padding:5px 5px 0px 10px;">
 					<form method="get" name=form7 action="page">
-						<input type="hidden" name="good_info" value={{ result[6]['GUID'] }}>
+						<input type="hidden" name="good_info" value={{ result[6]['item_tag'] }}>
 						<a target="_top" href="javascript:form7.submit()">
 							<div class="categoryWindowImg">
 								<img src= {{ result[6]['mediumImageUrls_1'] }} class="noImage">
@@ -293,7 +305,7 @@
 
 				<td style="padding:5px 5px 0px 10px;">
 					<form method="get" name=form8 action="page">
-						<input type="hidden" name="good_info" value={{ result[7]['GUID'] }}>
+						<input type="hidden" name="good_info" value={{ result[7]['item_tag'] }}>
 						<a target="_top" href="javascript:form8.submit()">
 							<div class="categoryWindowImg">
 								<img src= {{ result[7]['mediumImageUrls_1'] }} class="noImage">
@@ -306,7 +318,7 @@
 				
 				<td style="padding:5px 5px 0px 10px;">
 					<form method="get" name=form9 action="page">
-						<input type="hidden" name="good_info" value={{ result[8]['GUID'] }}>
+						<input type="hidden" name="good_info" value={{ result[8]['item_tag'] }}>
 						<a target="_top" href="javascript:form9.submit()">
 							<div class="categoryWindowImg">
 								<img src= {{ result[8]['mediumImageUrls_1'] }} class="noImage">
@@ -323,7 +335,7 @@
 				<td style="padding:0px 5px 0px 10px;">
 					<!-- formの名前重複だめ -->
 					<form method="get" name="form7_1" action="page"> 
-						<input type="hidden" name="good_info" value={{ result[6]['GUID'] }}>
+						<input type="hidden" name="good_info" value={{ result[6]['item_tag'] }}>
 						<a target="_top" href="javascript:form7_1.submit()" class="category_itemnamelink">
 							{{ result[3]['itemName'] }}
 						</a>
@@ -347,7 +359,7 @@
 				</td>
 				<td style="padding:0px 5px 0px 5px;">
 					<form method="get" name="form8_2" action="page"> 
-						<input type="hidden" name="good_info" value={{ result[7]['GUID'] }}>
+						<input type="hidden" name="good_info" value={{ result[7]['item_tag'] }}>
 						<a target="_top" href="javascript:form8_2.submit()" class="category_itemnamelink">
 							{{ result[7]['itemName'] }}
 						</a>
@@ -365,7 +377,7 @@
 				</td>
 				<td style="padding:0px 5px 0px 5px;">
 					<form method="get" name="form9_3" action="page"> 
-						<input type="hidden" name="good_info" value={{ result[8]['GUID'] }}>
+						<input type="hidden" name="good_info" value={{ result[8]['item_tag'] }}>
 						<a target="_top" href="javascript:form9_3.submit()" class="category_itemnamelink">
 							{{ result[8]['itemName'] }}
 						</a>
@@ -388,8 +400,10 @@
 
 	</table>
 
-	<br>
+	<!-- <br>
 	{{ result[0]['mediumImageUrls_1'] }}
+	<br>
+	{{ (result | count) }} -->
 
 
 </div>
