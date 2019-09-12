@@ -58,13 +58,14 @@ color:#666;/*検索ボタンマウスオーバー時のフォントカラー*/
 }
 
 /* footer */
-.footer {
-  margin-top: 150px;
-  display: flex;
-  justify-content: center;
+footer {
+  margin-top: 12%;
   background-color: #BF0000;
   color: #fff;
-  font-size: 18px;
-  padding: 2px 0;
+  font-size: 50px;
+  text-align: center;
+  vertical-align: center;
+  height: 300px;
+  padding-top:4%;
 }
 
