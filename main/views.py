@@ -45,6 +45,9 @@ def result():
         cursor.execute(sql)
         result = cursor.fetchall()
 
+    if(len(result)==0):
+        result = ['nothing']
+
     return render_template('result.html',
                     message=message, title=title, word = word, result=result)
 
