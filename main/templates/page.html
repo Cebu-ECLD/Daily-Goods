@@ -6,19 +6,19 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="jquery.min.js"></script>
-    <script src="js/owl.carousel.js"></script>
+    <script src="../static/page_js/owl.carousel.js"></script>
     <script type="text/javascript" src="https://cdn.rawgit.com/igorlino/elevatezoom-plus/1.1.6/src/jquery.ez-plus.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" -->
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.default.css">
-    <link rel="stylesheet" href="css/index_style.css">
+    <link rel="stylesheet" href="../static/page_css/bootstrap.css">
+    <link rel="stylesheet" href="../static/page_css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../static/page_css/style.css">
+    <link rel="stylesheet" href="../static/page_css/owl.carousel.css">
+    <link rel="stylesheet" href="../static/page_css/owl.theme.default.css">
+    <link rel="stylesheet" href="../static/page_css/index_style.css">
     <title>Goods Page</title>
 </head>
 
@@ -33,7 +33,7 @@
             <div class="header">
                 <!-- header左側 -->
                 <div class="header-left">
-                    <img src="imgs/logo.png" alt="Rakutenlogo">
+                    <img src="../static/image/logo.png" alt="Rakutenlogo">
                 </div>
                 <!-- header右側 -->
                 <div class="header-right">
@@ -94,12 +94,12 @@
 
 
     <div class="col-lg-5 col-xl-5">
-        <img id="itemimage" src="imgs/rem.jpeg" data-zoom-image="imgs/rem.jpeg" class="rounded" alt="this is an image" width="100%">
+        <img id="itemimage" src="../static/image/water5.jfif" data-zoom-image="../static/image/water5.jfif" class="rounded" alt="this is an image" width="80%" align="middle">
         <div class="owl-carousel owl-theme">
-            <div class="divimg"><img id="product-img1" src="imgs/rem.jpeg" class="rounded itemimgs" alt="this is an image" width="90%"></div>
-            <div class="divimg"><img id="product-img2" src="imgs/water.jpg" class="rounded itemimgs" alt="this is an image" width="90%"></div>
-            <div class="divimg"><img id="product-img3" src="imgs/rem.jpeg" class="rounded itemimgs" alt="this is an image" width="90%"></div>
-            <div class="divimg"><img id="product-img4" src="imgs/water.jpg" class="rounded itemimgs" alt="this is an image" width="90%"></div>
+            <div class="divimg"><img id="product-img1" src="../static/image/water1.jpg" class="rounded itemimgs" alt="this is an image" width="90%"></div>
+            <div class="divimg"><img id="product-img2" src="../static/image/water2.jpg" class="rounded itemimgs" alt="this is an image" width="90%"></div>
+            <div class="divimg"><img id="product-img3" src="../static/image/water3.jpg" class="rounded itemimgs" alt="this is an image" width="90%"></div>
+            <div class="divimg"><img id="product-img4" src="../static/image/water4.jpg" class="rounded itemimgs" alt="this is an image" width="90%"></div>
         </div>
     </div>
 
@@ -108,20 +108,23 @@
         <p id="itemnumber" class="text-muted"> number of product xxxxxxxxx </p>
         <div class="row">
             <div class="col-md-2">
-                <button type="button" class="btn-quantity btn btn-outline-secondary">12本</button>
+                <button type="button" class="btn-quantity btn btn-outline-secondary active" id="btn-1"><span id="num1">12</span>本</button>
             </div>
             <div class="col-md-2">
-                <button type="button" class="btn-quantity btn btn-outline-secondary">24本</button>
+                <button type="button" class="btn-quantity btn btn-outline-secondary" id="btn-2"><span id="num2">24</span>本</button>
             </div>
             <div class="col-md-2">
-                <button type="button" class="btn-quantity btn btn-outline-secondary">48本</button>
+                <button type="button" class="btn-quantity btn btn-outline-secondary" id="btn-3"><span id="num3">48</span>本</button>
             </div>
         </div>
-        <h6 class="text-danger" id="price">価格 <span id="itemprice"><font size=10>1100円 </font>110円/本</span>（税入）</h6>
+        <h6 class="text-danger" id="price">価格 
+            <span id="itemprice" class="bigfonts">1200</span> 
+            <span class="bigfonts">円</span> 
+            <span id="itempriceEach">100</span>円/本（税入）</h6>
         <div class="row">
             <div class="col-md-12">
                 <h6 class="text-danger">
-                    <img src="imgs/icon_point.png" height="22px">
+                    <img src="../static/image/icon_point.png" height="22px">
                     14ポイント（1倍）
                 </h6>
             </div>
@@ -161,16 +164,46 @@
 
     </div>
     <div class="col-md-4">
-        <button class="btn btn-block btn-danger btn-sm"><img src=imgs/plussign_23x23.png>ご購入手続きへ</button>
+        <button class="btn btn-block btn-danger btn-sm"><img src="../static/image/plussign_23x23.png">ご購入手続きへ</button>
 
     </div>
     <div class="col-md-4">
-        <button class="btn btn-block btn-danger btn-sm"><img src=imgs/carticon_23x23.png>商品をかごに追加</button>
+        <button class="btn btn-block btn-danger btn-sm"><img src="../static/image/carticon_23x23.png">商品をかごに追加</button>
     </div>
     </div>
     </div>
     </div>
 </div>
+
+
+<!--div>
+    <img id="img_01" src="../static/image/water.jpg" data-zoom-image="../static/image/water.jpg"/>
+
+<div id="gal1">
+
+    <a href="#" data-image="../static/image/rem.jpeg" data-zoom-image="../static/image/rem.jpeg">
+        <img id="img_01" src="../static/image/rem.jpeg"/>
+    </a>
+
+    <a href="#" data-image="../static/image/water.jpg" data-zoom-image="../static/image/water.jpg">
+        <img id="img_01" src="../static/image/water.jpg"/>
+    </a>
+
+    <a href="#" data-image="../static/image/rem.jpeg" data-zoom-image="../static/image/rem.jpeg">
+        <img id="img_01" src="../static/image/rem.jpeg"/>
+    </a>
+
+    <a href="#" data-image="../static/image/water.jpg" data-zoom-image="../static/image/water.jpg">
+        <img id="img_01" src="thumb/image4.jpg"/>
+    </a>
+
+</div>
+</div-->
+
+
+
+
+
 
 <div class="footer-page">
     <p>Rakuten-Daily.inc</p>
@@ -234,12 +267,42 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $("#itemimage").ezPlus({
-                zoomWindowWidth:500,
-                zoomWindowHeight:500
-        });
-});
+            zoomWindowWidth:500,
+            zoomWindowHeight:500
+        });    
+    });
 </script>
 
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".btn-quantity").click(function(){
+            let activebtn = $(this).attr("id");
+            if($(this).hasClass("active")==0){
+                $(this).addClass("active");
+            }
+            if(activebtn=="btn-1"){
+                $("#btn-2").removeClass("active");
+                $("#btn-3").removeClass("active");
+                 $("#itemprice").html("1200");
+                $("#itempriceEach").html("100");
+
+            }
+            if(activebtn=="btn-2"){
+                $("#btn-1").removeClass("active");
+                $("#btn-3").removeClass("active");
+                $("#itemprice").html("2160");
+                $("#itempriceEach").html("90");
+            }
+            if(activebtn=="btn-3"){
+                $("#btn-1").removeClass("active");
+                $("#btn-2").removeClass("active");
+                $("#itemprice").html("3840");
+                $("#itempriceEach").html("80");
+            }
+        })
+    });
+</script>>
 <!--script>
 $(document).ready(function(){
     $.getJSON("test.json",function(data){
