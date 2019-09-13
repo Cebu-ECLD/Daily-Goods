@@ -66,5 +66,6 @@ color:#666;/*検索ボタンマウスオーバー時のフォントカラー*/
   color: #fff;
   font-size: 18px;
   padding: 2px 0;
+  bottom:0;
 }
 
